@@ -169,6 +169,7 @@
       </div>
     </div>
 
+    <!-- Le bloc local est conservé UNIQUEMENT sur l'index -->
     <div class="mt-12 p-6 bg-white border border-gray-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
       <div class="flex items-center gap-4">
         <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FLAG/DCNC.svg" alt="Drapeau Commun NC" class="h-10 w-auto object-contain" />
@@ -181,33 +182,73 @@
     </div>
   </main>
 
+  <!-- Pied de page officiel -->
   <footer class="bg-white border-t border-gray-200 py-12 px-6">
     <div class="max-w-7xl mx-auto">
+      
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-200 text-xs">
+        
+        <!-- Colonne 1 : Identité & Drapeau NC -->
         <div class="space-y-3">
           <p class="text-base font-bold tracking-widest text-black uppercase">FURNALITY</p>
-          <p class="text-gray-500 leading-relaxed text-xs">Du Son, de l’Image, une Famille.<br>Le média francophone et 100% indépendant.</p>
+          <p class="text-gray-500 leading-relaxed text-xs">
+            Du Son, de l’Image, une Famille.<br>
+            Le média francophone et 100% indépendant.
+          </p>
+          <div class="pt-2 flex flex-col items-start gap-1">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FLAG/DCNC.svg" alt="Drapeau Commun NC" class="h-6 w-auto object-contain mb-1" />
+            <p class="text-xs font-bold text-black leading-tight">Studio Nouméa,</p>
+            <p class="text-xs font-bold text-black leading-tight">Nouvelle-Calédonie</p>
+          </div>
         </div>
+
+        <!-- Colonne 2 : Réseaux Furnality -->
         <div>
-          <h4 class="eyebrow text-xs mb-4 uppercase font-bold text-gray-400">Informations & Légal</h4>
-          <nav class="flex flex-col gap-2">
-            <a href="mentions-legales.html" class="hover:text-black">Mentions Légales</a>
-            <a href="cgu-conditions.html" class="hover:text-black">CGU & Conditions</a>
-            <a href="confidentialite-donnees.html" class="hover:text-black">Confidentialité</a>
-            <a href="gestion-cookies.html" class="hover:text-black">Traceurs & Cookies</a>
-            <a href="charte-antenne.html" class="hover:text-black">Charte des Antennes</a>
-            <a href="acces-restreint.html" class="hover:text-black">Accès Restreints</a>
-            <a href="devenir-membre.html" class="hover:text-black">Devenir Membre</a>
-            <a href="fondateurs-contributeurs.html" class="hover:text-black">Fondateurs & Crédits</a>
+          <h4 class="eyebrow text-xs mb-4">Furnality</h4>
+          <nav id="footer-furnality" class="flex flex-col gap-2" aria-label="Réseaux Furnality">
+            <!-- Injecté dynamiquement via Cloudflare Worker D1 -->
           </nav>
         </div>
+
+        <!-- Colonne 3 : Réseaux Office Broadcaster -->
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Office Broadcaster</h4>
+          <nav id="footer-office" class="flex flex-col gap-2" aria-label="Réseaux Office Broadcaster">
+            <!-- Injecté dynamiquement via Cloudflare Worker D1 -->
+          </nav>
+        </div>
+
+        <!-- Colonne 4 : Chaînes & Marques -->
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Chaînes & Marques</h4>
+          <nav id="footer-channels" class="flex flex-col gap-2" aria-label="Réseaux Chaînes">
+            <!-- Injecté dynamiquement via Cloudflare Worker D1 -->
+          </nav>
+        </div>
+
+        <!-- Colonne 5 : INFORMATIONS & LÉGAL -->
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Informations & Légal</h4>
+          <nav class="flex flex-col gap-2" aria-label="Registre Juridique Legacy">
+            <a href="/legacy/mentions-legales.html" class="footer-link">Mentions Légales</a>
+            <a href="/legacy/cgu-conditions.html" class="footer-link">CGU & Conditions</a>
+            <a href="/legacy/confidentialite-donnees.html" class="footer-link">Confidentialité</a>
+            <a href="/legacy/gestion-cookies.html" class="footer-link">Traceurs & Cookies</a>
+            <a href="/legacy/charte-antenne.html" class="footer-link">Charte des Antennes</a>
+            <a href="/legacy/acces-restreint.html" class="footer-link">Accès Restreints</a>
+            <a href="/legacy/devenir-membre.html" class="footer-link">Devenir Membre</a>
+            <a href="/legacy/fondateurs-contributeurs.html" class="footer-link">Fondateurs & Crédits</a>
+          </nav>
+        </div>
+
       </div>
+
+      <!-- Mentions bas de page -->
       <div class="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
         <p>&copy; 2027 Furnality — Tous droits réservés.</p>
-        <div class="flex items-center gap-2">
-          <span class="font-semibold text-gray-700">Furnality Legacy</span>
-        </div>
+        <p class="font-semibold text-gray-700">Furnality Network</p>
       </div>
+
     </div>
   </footer>
 
