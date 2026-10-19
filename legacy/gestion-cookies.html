@@ -6,7 +6,7 @@
   <title>Gestion des Traceurs & Cookies — Furnality</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FLAG/DCNC.svg">
+  <link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/FAV%20-%20Furnality.svg">
   <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/global.css?v=20">
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased min-h-screen flex flex-col justify-between">
@@ -16,9 +16,9 @@
       <div class="flex items-center gap-3 select-none">
         <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/Furnality%20Logo.svg" alt="Furnality" class="h-8 w-auto object-contain" />
         <span class="text-xs text-gray-300">|</span>
-        <span class="text-xs font-bold tracking-widest text-gray-400 uppercase">Registre / Traceurs & Cookies</span>
+        <span class="text-xs font-bold tracking-widest text-gray-400 uppercase hidden sm:inline-block">Registre / Traceurs & Cookies</span>
       </div>
-      <a href="index.html" class="text-xs font-bold text-black hover:underline flex items-center gap-2">
+      <a href="index.html" class="flex items-center gap-2 text-xs font-mono font-semibold text-gray-600 uppercase hover:text-black transition-colors">
         <i data-lucide="arrow-left" class="w-4 h-4"></i>
         <span>Retour au registre</span>
       </a>
@@ -29,67 +29,45 @@
     <div class="border-b border-gray-200 pb-8 mb-10">
       <div class="flex items-center gap-3 mb-3">
         <span class="px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider bg-black text-white">Document Officiel</span>
-        <span class="text-xs text-gray-400">Réf : COOK-2026-01</span>
+        <span class="text-xs font-mono text-gray-400">Réf : COOK-2026-01</span>
       </div>
       <h1 class="text-3xl md:text-5xl font-extrabold text-black tracking-tight mb-3">
         Gestion des Traceurs & Cookies.
       </h1>
       <p class="text-gray-600 text-sm leading-relaxed max-w-2xl">
-        Information relative au dépôt de cookies, à l'absence d'outils de ciblage publicitaire et au fonctionnement des lecteurs multimédias tiers.
+        Informations relatives au fonctionnement technique, à l'absence de ciblage commercial et aux éléments intégrés.
       </p>
     </div>
 
     <div class="space-y-8 text-sm leading-relaxed text-gray-700">
       <section class="bg-white p-6 border border-gray-200">
         <h2 class="text-lg font-bold text-black mb-4 uppercase tracking-wide border-b border-gray-100 pb-2">
-          1. Politique Globale & Absence de Traçage Commercial
+          1. Absence de Traçage Commercial
         </h2>
-        <p class="mb-3">
-          Le portail <strong>Furnality</strong> n'utilise aucun cookie publicitaire, aucun profilage comportemental ni aucun script de traçage commercial propre.
-        </p>
         <p>
-          Aucun bandeau de consentement n'est requis pour la navigation de base, car nous ne collectons aucune donnée marketing à votre insu.
+          Le portail Furnality n'utilise <strong>aucun cookie publicitaire, aucun profilage ni aucun script de suivi commercial propre</strong>. Aucun bandeau de consentement n'est donc requis pour naviguer.
         </p>
       </section>
 
       <section class="bg-white p-6 border border-gray-200">
         <h2 class="text-lg font-bold text-black mb-4 uppercase tracking-wide border-b border-gray-100 pb-2">
-          2. Cookies Techniques & Hébergement
+          2. Cookies Fonctionnels & Lecteurs Tiers
         </h2>
         <p class="mb-3">
-          Lors de votre navigation sur nos registres, des données techniques temporaires peuvent être gérées par l'infrastructure d'hébergement (GitHub Pages) pour assurer la sécurité, la livraison du contenu et la prévention des attaques.
+          Certains éléments techniques sont nécessaires à la diffusion du site et de nos contenus :
         </p>
-        <p>
-          Ces éléments sont strictement nécessaires au bon fonctionnement du site et ne permettent pas de vous identifier personnellement.
-        </p>
-      </section>
-
-      <section class="bg-white p-6 border border-gray-200">
-        <h2 class="text-lg font-bold text-black mb-4 uppercase tracking-wide border-b border-gray-100 pb-2">
-          3. Lecteurs Extérieurs (YouTube, Twitch, Discord)
-        </h2>
-        <p class="mb-3">
-          Certaines pages du réseau intègrent des lecteurs vidéo ou des widgets provenant de plateformes tierces (notamment YouTube, Twitch ou Discord) pour diffuser nos flux en direct et nos émissions.
-        </p>
-        <p class="mb-3">
-          Lorsque vous interagissez avec ces éléments intégrés, ces services peuvent déposer leurs propres cookies et collecter des données selon leurs conditions respectives :
-        </p>
-        <ul class="list-disc list-inside space-y-1 text-xs text-gray-600 bg-gray-50 p-4 border border-gray-200 font-mono">
-          <li><strong>Google / YouTube :</strong> Gestion du lecteur et statistiques de visionnage.</li>
-          <li><strong>Twitch Interactive :</strong> Authentification du lecteur et flux en direct.</li>
-          <li><strong>Discord :</strong> Intégration des canaux et états de présence.</li>
+        <ul class="space-y-2 text-xs text-gray-600 font-mono">
+          <li class="p-3 bg-gray-50 border border-gray-200"><strong class="text-black">GitHub Pages :</strong> Gère des données techniques anonymes de livraison web et de sécurité.</li>
+          <li class="p-3 bg-gray-50 border border-gray-200"><strong class="text-black">YouTube / Twitch / Discord :</strong> Les lecteurs vidéo intégrés gèrent leurs propres cookies techniques lors de la lecture des flux.</li>
         </ul>
       </section>
 
       <section class="bg-white p-6 border border-gray-200">
         <h2 class="text-lg font-bold text-black mb-4 uppercase tracking-wide border-b border-gray-100 pb-2">
-          4. Contrôle via votre Navigateur
+          3. Contrôle par le Navigateur
         </h2>
-        <p class="mb-3">
-          Vous pouvez à tout moment configurer votre navigateur web pour bloquer ou supprimer les cookies tiers déposés par les plateformes de vidéo. 
-        </p>
         <p>
-          Notez toutefois que le blocage complet de ces éléments peut altérer la lecture directe des flux vidéo intégrés sur le site.
+          Vous pouvez à tout moment configurer votre navigateur pour bloquer les cookies tiers. Notez que cela peut affecter l'affichage des lecteurs vidéo intégrés.
         </p>
       </section>
     </div>
@@ -114,5 +92,6 @@
   </footer>
 
   <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/global.js?v=1"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
