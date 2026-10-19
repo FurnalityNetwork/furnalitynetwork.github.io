@@ -6,7 +6,7 @@
   <title>Accès aux Contenus Restreints — Furnality</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FLAG/DCNC.svg">
+  <link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/FAV%20-%20Furnality.svg">
   <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/global.css?v=20">
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased min-h-screen flex flex-col justify-between">
@@ -16,9 +16,9 @@
       <div class="flex items-center gap-3 select-none">
         <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/Furnality%20Logo.svg" alt="Furnality" class="h-8 w-auto object-contain" />
         <span class="text-xs text-gray-300">|</span>
-        <span class="text-xs font-bold tracking-widest text-gray-400 uppercase">Registre / Accès Restreint</span>
+        <span class="text-xs font-bold tracking-widest text-gray-400 uppercase hidden sm:inline-block">Registre / Accès Restreint</span>
       </div>
-      <a href="index.html" class="text-xs font-bold text-black hover:underline flex items-center gap-2">
+      <a href="index.html" class="flex items-center gap-2 text-xs font-mono font-semibold text-gray-600 uppercase hover:text-black transition-colors">
         <i data-lucide="arrow-left" class="w-4 h-4"></i>
         <span>Retour au registre</span>
       </a>
@@ -29,40 +29,35 @@
     <div class="border-b border-gray-200 pb-8 mb-10">
       <div class="flex items-center gap-3 mb-3">
         <span class="px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider bg-black text-white">Protocole de Sécurité</span>
-        <span class="text-xs text-gray-400">Réf : ACC-2026-01</span>
+        <span class="text-xs font-mono text-gray-400">Réf : ACC-2026-01</span>
       </div>
       <h1 class="text-3xl md:text-5xl font-extrabold text-black tracking-tight mb-3">
         Accès aux Contenus Restreints.
       </h1>
       <p class="text-gray-600 text-sm leading-relaxed max-w-2xl">
-        Procédure d'habilitation, contrôle de majorité et règles d'accès aux canaux réservés (Espaces NSFW et salons à accès spécifique).
+        Procédure d'accès et contrôle de majorité pour les espaces réservés du réseau.
       </p>
     </div>
 
     <div class="space-y-8 text-sm leading-relaxed text-gray-700">
       <section class="bg-white p-6 border border-gray-200">
         <h2 class="text-lg font-bold text-black mb-4 uppercase tracking-wide border-b border-gray-100 pb-2">
-          1. Principe Général & Protection des Mineurs
+          1. Protection des Mineurs (18+)
         </h2>
-        <p class="mb-3">
+        <p>
           Les espaces restreints ou à signalétique spécifique (notamment sur le serveur Discord officiel) sont strictement réservés aux utilisateurs majeurs. Aucune dérogation n'est accordée.
         </p>
       </section>
 
       <section class="bg-white p-6 border border-gray-200">
         <h2 class="text-lg font-bold text-black mb-4 uppercase tracking-wide border-b border-gray-100 pb-2">
-          2. Procédure de Vérification Directe
+          2. Habilitation
         </h2>
         <p class="mb-3">
-          Pour obtenir le rôle et le niveau d'accès correspondant, l'utilisateur doit obligatoirement passer par un protocole de vérification d'âge en direct :
+          L'obtention des rôles à accès restreint nécessite un contrôle de majorité en direct auprès de la modération.
         </p>
-        <ul class="list-disc list-inside space-y-1 text-xs text-gray-600 bg-gray-50 p-4 border border-gray-200 font-mono mb-3">
-          <li>Prise de rendez-vous avec l'équipe de modération.</li>
-          <li>Présentation visuelle en visioconférence d'une pièce d'identité officielle.</li>
-          <li>Contrôle visuel direct de correspondance de l'identité.</li>
-        </ul>
-        <p class="text-xs text-gray-500 border-l-2 border-black pl-3 py-1">
-          Rappel : Aucun enregistrement, capture d'écran ou sauvegarde du document d'identité n'est effectué lors de cette procédure. Seul le statut "Majeur" est validé dans les registres du serveur.
+        <p class="text-xs text-gray-500">
+          Pour connaître les modalités détaillées de la vérification et les garanties de confidentialité (non-conservation des documents), consultez la <a href="confidentialite-donnees.html" class="text-black font-bold underline">Politique de Confidentialité</a>.
         </p>
       </section>
     </div>
@@ -87,5 +82,6 @@
   </footer>
 
   <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/global.js?v=1"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
