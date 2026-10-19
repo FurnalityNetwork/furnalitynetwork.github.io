@@ -13,11 +13,11 @@
 
   <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-3 select-none">
+      <a href="https://furnalitynetwork.github.io" class="flex items-center gap-3 select-none">
         <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/Furnality%20Logo.svg" alt="Furnality" class="h-8 w-auto object-contain" />
         <span class="text-xs text-gray-300">|</span>
         <span class="text-xs font-bold tracking-widest text-gray-400 uppercase hidden sm:inline-block">Registre / Traceurs & Cookies</span>
-      </div>
+      </a>
       <a href="index.html" class="flex items-center gap-2 text-xs font-mono font-semibold text-gray-600 uppercase hover:text-black transition-colors">
         <i data-lucide="arrow-left" class="w-4 h-4"></i>
         <span>Retour au registre</span>
@@ -51,15 +51,27 @@
 
       <section class="bg-white p-6 border border-gray-200">
         <h2 class="text-lg font-bold text-black mb-4 uppercase tracking-wide border-b border-gray-100 pb-2">
-          2. Cookies Fonctionnels & Lecteurs Tiers
+          2. Cookies Techniques, Hébergement & Lecteurs Tiers
         </h2>
         <p class="mb-3">
           Certains éléments techniques sont nécessaires à la diffusion du site et de nos contenus :
         </p>
-        <ul class="space-y-2 text-xs text-gray-600 font-mono">
+        <ul class="space-y-2 text-xs text-gray-600 font-mono mb-3">
           <li class="p-3 bg-gray-50 border border-gray-200"><strong class="text-black">GitHub Pages :</strong> Gère des données techniques anonymes de livraison web et de sécurité.</li>
-          <li class="p-3 bg-gray-50 border border-gray-200"><strong class="text-black">YouTube / Twitch / Discord :</strong> Les lecteurs vidéo intégrés gèrent leurs propres cookies techniques lors de la lecture des flux.</li>
+          <li class="p-3 bg-gray-50 border border-gray-200"><strong class="text-black">Cloudflare :</strong> Gère les données techniques de nos infrastructures et API de diffusion (Workers, bases de registres).</li>
         </ul>
+        <p class="mb-3">
+          Les lecteurs et widgets intégrés provenant de plateformes tierces gèrent leurs propres cookies techniques lors de la lecture des flux ou de l'affichage des réseaux :
+        </p>
+        <div class="flex flex-wrap gap-2 text-xs font-mono">
+          <span class="px-2.5 py-1 bg-gray-100 border border-gray-200">Instagram</span>
+          <span class="px-2.5 py-1 bg-gray-100 border border-gray-200">YouTube</span>
+          <span class="px-2.5 py-1 bg-gray-100 border border-gray-200">TikTok</span>
+          <span class="px-2.5 py-1 bg-gray-100 border border-gray-200">Twitch</span>
+          <span class="px-2.5 py-1 bg-gray-100 border border-gray-200">Discord</span>
+          <span class="px-2.5 py-1 bg-gray-100 border border-gray-200">Facebook</span>
+          <span class="px-2.5 py-1 bg-gray-100 border border-gray-200">Root App</span>
+        </div>
       </section>
 
       <section class="bg-white p-6 border border-gray-200">
@@ -71,27 +83,56 @@
         </p>
       </section>
     </div>
-
-    <div class="mt-12 p-6 bg-white border border-gray-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-      <div class="flex items-center gap-4">
-        <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FLAG/DCNC.svg" alt="Drapeau Commun NC" class="h-10 w-auto object-contain" />
-        <div>
-          <p class="text-xs font-bold uppercase tracking-wider text-black">Studio Nouméa, Nouvelle-Calédonie</p>
-          <p class="text-xs text-gray-500">Réseau multimédia francophone et indépendant.</p>
-        </div>
-      </div>
-      <span class="text-[11px] font-semibold text-gray-400">Mise à jour : 2026</span>
-    </div>
   </main>
 
-  <footer class="bg-white border-t border-gray-200 py-8 px-6">
-    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-      <p>© 2026 Furnality — Tous droits réservés.</p>
-      <p class="font-semibold text-black">Furnality Legacy</p>
+  <footer class="bg-white border-t border-gray-200 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-200 text-xs">
+        <div class="space-y-3">
+          <p class="text-base font-bold tracking-widest text-black uppercase">FURNALITY</p>
+          <p class="text-gray-500 leading-relaxed text-xs">
+            Du Son, de l’Image, une Famille.<br>
+            Le média francophone et 100% indépendant.
+          </p>
+          <div class="pt-2 flex flex-col items-start gap-1">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FLAG/DCNC.svg" alt="Drapeau Commun NC" class="h-6 w-auto object-contain mb-1" />
+            <p class="text-xs font-bold text-black leading-tight">Studio Nouméa,</p>
+            <p class="text-xs font-bold text-black leading-tight">Nouvelle-Calédonie</p>
+          </div>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Furnality</h4>
+          <nav id="footer-furnality" class="flex flex-col gap-2" aria-label="Réseaux Furnality"></nav>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Office Broadcaster</h4>
+          <nav id="footer-office" class="flex flex-col gap-2" aria-label="Réseaux Office Broadcaster"></nav>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Chaînes & Marques</h4>
+          <nav id="footer-channels" class="flex flex-col gap-2" aria-label="Réseaux Chaînes"></nav>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Informations & Légal</h4>
+          <nav class="flex flex-col gap-2" aria-label="Registre Juridique Legacy">
+            <a href="/legacy/mentions-legales.html" class="footer-link">Mentions Légales</a>
+            <a href="/legacy/cgu-conditions.html" class="footer-link">CGU & Conditions</a>
+            <a href="/legacy/confidentialite-donnees.html" class="footer-link">Confidentialité</a>
+            <a href="/legacy/gestion-cookies.html" class="footer-link">Traceurs & Cookies</a>
+            <a href="/legacy/charte-antenne.html" class="footer-link">Charte des Antennes</a>
+            <a href="/legacy/acces-restreint.html" class="footer-link">Accès Restreints</a>
+            <a href="/legacy/devenir-membre.html" class="footer-link">Devenir Membre</a>
+            <a href="/legacy/fondateurs-contributeurs.html" class="footer-link">Fondateurs & Crédits</a>
+          </nav>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <p>&copy; 2027 Furnality — Tous droits réservés.</p>
+        <p class="font-semibold text-gray-700">Furnality Network</p>
+      </div>
     </div>
   </footer>
 
   <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/global.js?v=1"></script>
-  <script>lucide.createIcons();</script>
 </body>
 </html>
