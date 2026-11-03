@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,19 +20,23 @@
 <body class="bg-white text-gray-900 antialiased min-h-screen flex flex-col justify-between">
 
   <!-- Navigation principale -->
-  <header class="top-nav fixed top-0 z-40 w-full px-6 py-4 md:px-12">
+  <header class="top-nav fixed top-0 z-40 w-full px-6 py-4 md:px-12 bg-white/95 backdrop-blur-md border-b border-gray-200">
     <nav class="relative mx-auto flex max-w-7xl items-center justify-between" aria-label="Navigation principale">
-      <div class="logo-box flex items-center gap-3">
-        <a href="https://furnalitynetwork.github.io">
+      
+      <!-- Zone Logos (Seuls les éléments <a> sont cliquables) -->
+      <div class="logo-box flex items-center gap-3 select-none">
+        <a href="https://furnalitynetwork.github.io" class="flex-shrink-0" title="Retour à l'accueil Furnality">
           <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/Furnality%20Logo.svg" alt="Furnality" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
         </a>
-        <span class="logo-separator">|</span>
-        <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/ZAPPING.svg" alt="Zapping" class="h-8 w-auto object-contain" onerror="this.style.display='none'">
+        <span class="logo-separator text-xs text-gray-300">|</span>
+        <a href="#accueil" class="flex-shrink-0" title="Zapping Home">
+          <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/ZAPPING.svg" alt="Zapping" class="h-8 w-auto object-contain" onerror="this.style.display='none'">
+        </a>
       </div>
 
       <div class="hidden md:flex items-center gap-8">
-        <a href="#chaines" class="nav-link">Canaux & Antennes</a>
-        <a href="#programmes" class="nav-link">Grille & Univers</a>
+        <a href="#chaines" class="nav-link text-xs font-bold uppercase tracking-wider text-gray-600 hover:text-black transition-colors">Canaux & Antennes</a>
+        <a href="#programmes" class="nav-link text-xs font-bold uppercase tracking-wider text-gray-600 hover:text-black transition-colors">Grille & Univers</a>
       </div>
  
       <div class="flex items-center gap-3">
@@ -42,7 +46,8 @@
         </button>
       </div>
 
-      <div id="mobile-menu" class="mobile-menu hidden absolute top-full left-0 right-0 flex-col gap-4 p-6 bg-white border-b border-gray-200 shadow-lg">
+      <!-- Menu Mobile -->
+      <div id="mobile-menu" class="mobile-menu hidden absolute top-full left-0 right-0 flex-col gap-4 p-6 bg-white border-b border-gray-200 shadow-lg md:hidden">
         <a href="#chaines" class="nav-link">Canaux & Antennes</a>
         <a href="#programmes" class="nav-link">Grille & Univers</a>
         <a href="#contact" class="nav-link">Contact</a>
@@ -52,145 +57,193 @@
 
   <main class="pt-20">
     
-<!-- Section : Accueil / Hero & Slider -->
-    <section id="accueil" class="hero px-6 py-20 md:px-12">
+    <!-- Section : Accueil / Hero -->
+    <section id="accueil" class="hero px-6 py-16 md:py-20 md:px-12 border-b border-gray-100 scroll-mt-20">
       <div class="relative mx-auto w-full max-w-7xl z-10">
-        <div class="max-w-3xl mb-8">
-          <p class="eyebrow mb-4">plateforme de streaming</p>
+        <div class="max-w-3xl mb-6">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 bg-black text-white text-[10px] font-extrabold uppercase tracking-widest mb-4">
+            Plateforme de Streaming
+          </div>
           <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-black leading-tight">
             ZAPPING by Furnality.
           </h1>
-          <p class="mt-6 text-lg text-gray-600 max-w-xl">
+          <p class="mt-4 text-base md:text-lg text-gray-600 max-w-xl leading-relaxed">
             Vos histoires préférées, sans la moindre publicité grâce à votre soutien.
           </p>
         </div>
-        <!-- C'est ici que le slider des émissions mises en avant va s'injecter -->
+        
+        <!-- Injection Slider Cloudflare D1 -->
         <div id="featured-slider"></div>
       </div>
     </section>
 
-    <!-- Section : Chaînes -->
-    <section id="chaines" class="section-space">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+    <!-- Section : Chaînes TV & Radio -->
+    <section id="chaines" class="section-space py-16 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col justify-between gap-4 md:flex-row md:items-end border-b border-gray-200 pb-4">
           <div>
-            <p class="eyebrow mb-3">TV & Radio</p>
-            <h2 class="text-3xl font-bold text-black max-w-2xl">EN DIRECT.</h2>
+            <p class="eyebrow mb-1 text-xs font-mono text-gray-400 uppercase">TV & Radio</p>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-black">EN DIRECT.</h2>
           </div>
         </div>
 
-        <h3 class="mt-8 text-lg font-bold border-b border-gray-200 pb-2">Télévision</h3>
-        <div id="tv-channels-grid" class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-          <!-- Injecté dynamiquement depuis Cloudflare D1 -->
+        <!-- Sous-section Télévision -->
+        <div class="mt-8">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 flex items-center gap-2">
+            <i data-lucide="tv" class="w-4 h-4 text-black"></i>
+            <span>Télévision</span>
+          </h3>
+          <div id="tv-channels-grid" class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            <!-- Skeletons de chargement temporaires (remplacés dynamiquement par D1) -->
+            <div class="h-28 bg-gray-50 border border-gray-200 animate-pulse rounded-none"></div>
+            <div class="h-28 bg-gray-50 border border-gray-200 animate-pulse rounded-none"></div>
+            <div class="h-28 bg-gray-50 border border-gray-200 animate-pulse rounded-none"></div>
+            <div class="h-28 bg-gray-50 border border-gray-200 animate-pulse rounded-none"></div>
+            <div class="h-28 bg-gray-50 border border-gray-200 animate-pulse rounded-none"></div>
+          </div>
         </div>
 
-        <h3 class="mt-12 text-lg font-bold border-b border-gray-200 pb-2">Radio</h3>
-        <div id="radio-channels-grid" class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-          <!-- Injecté dynamiquement depuis Cloudflare D1 -->
+        <!-- Sous-section Radio -->
+        <div class="mt-12">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 flex items-center gap-2">
+            <i data-lucide="radio" class="w-4 h-4 text-black"></i>
+            <span>Radio & Stations Audio</span>
+          </h3>
+          <div id="radio-channels-grid" class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            <!-- Skeletons de chargement temporaires -->
+            <div class="h-28 bg-gray-50 border border-gray-200 animate-pulse rounded-none"></div>
+          </div>
         </div>
       </div>
     </section>
     
-    <!-- Section : À la une & Programmes -->
-    <section id="programmes" class="section-space line-top">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end mb-10">
+    <!-- Section : Catalogue / Programmes -->
+    <section id="programmes" class="section-space py-16 border-t border-gray-200 bg-gray-50/50 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 border-b border-gray-200 pb-6">
           <div>
-            <p class="eyebrow mb-3">Catalogue</p>
-            <h2 class="text-3xl font-bold text-black">Nos émissions.</h2>
+            <p class="eyebrow mb-1 text-xs font-mono text-gray-400 uppercase">Catalogue</p>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-black">Nos émissions.</h2>
+          </div>
+
+          <!-- Onglets de filtrage du catalogue (Structure prête pour ton JS) -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 font-mono text-xs">
+            <button type="button" class="px-3 py-1.5 bg-black text-white font-bold uppercase tracking-wider border border-black">Tous</button>
+            <button type="button" class="px-3 py-1.5 bg-white text-gray-600 hover:text-black border border-gray-200 hover:border-black uppercase tracking-wider transition-colors">Séries TV</button>
+            <button type="button" class="px-3 py-1.5 bg-white text-gray-600 hover:text-black border border-gray-200 hover:border-black uppercase tracking-wider transition-colors">Podcasts</button>
+            <button type="button" class="px-3 py-1.5 bg-white text-gray-600 hover:text-black border border-gray-200 hover:border-black uppercase tracking-wider transition-colors">Documentaires</button>
           </div>
         </div>
 
+        <!-- Injection des émissions Cloudflare D1 -->
         <div id="shows-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Injecté dynamiquement depuis Cloudflare D1 -->
+          <!-- Skeletons temporaires -->
+          <div class="h-64 bg-white border border-gray-200 p-6 flex flex-col justify-between animate-pulse">
+            <div class="space-y-3">
+              <div class="h-4 bg-gray-200 w-1/3"></div>
+              <div class="h-6 bg-gray-200 w-3/4"></div>
+              <div class="h-12 bg-gray-100 w-full"></div>
+            </div>
+            <div class="h-8 bg-gray-200 w-1/4 self-end"></div>
+          </div>
+          <div class="h-64 bg-white border border-gray-200 p-6 flex flex-col justify-between animate-pulse">
+            <div class="space-y-3">
+              <div class="h-4 bg-gray-200 w-1/3"></div>
+              <div class="h-6 bg-gray-200 w-3/4"></div>
+              <div class="h-12 bg-gray-100 w-full"></div>
+            </div>
+            <div class="h-8 bg-gray-200 w-1/4 self-end"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Section : Contact / Affiliation -->
-<section id="contact" class="section-space line-top py-16 px-6 md:px-12 border-t border-gray-200">
-  <div class="section-inner max-w-7xl mx-auto">
-    <article class="feature-panel p-8 bg-gray-50 border border-gray-200 border-l-4 border-l-black">
-      <div class="max-w-2xl">
-        <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/OBC%20-%20Office%20BroadCaster.svg" alt="Office Broadcaster" class="h-10 w-auto object-contain mb-4" onerror="this.style.display='none'">
-        <p class="eyebrow mb-3">Office BroadCaster</p>
-        <h2 class="text-3xl font-bold text-black">Rejoindre le réseau de diffusion.</h2>
-        <p class="mt-4 text-gray-600 leading-relaxed">
-          Projets de diffusion, partenariats de flux ou propositions de contenus : nous accompagnons les formats originaux et la création indépendante.
-        </p>
-        <a href="https://furnalitynetwork.github.io/OfficeBroadCaster/" class="primary-button mt-6">
-          Contacter la régie
-        </a>
+    <!-- Section : Contact / Office Broadcaster -->
+    <section id="contact" class="section-space py-16 px-6 md:px-12 border-t border-gray-200 scroll-mt-20">
+      <div class="section-inner max-w-7xl mx-auto">
+        <article class="feature-panel p-8 md:p-10 bg-gray-50 border border-gray-200 border-l-4 border-l-black flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div class="max-w-2xl">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/OBC%20-%20Office%20BroadCaster.svg" alt="Office Broadcaster" class="h-9 w-auto object-contain mb-4" onerror="this.style.display='none'">
+            <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-2">Office BroadCaster</p>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-black">Rejoindre le réseau de diffusion.</h2>
+            <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+              Projets de diffusion, partenariats de flux ou propositions de contenus : nous accompagnons les formats originaux et la création indépendante.
+            </p>
+          </div>
+          <a href="https://furnalitynetwork.github.io/OfficeBroadCaster/" class="primary-button flex-shrink-0 px-6 py-3 bg-black text-white font-bold text-xs uppercase tracking-widest hover:bg-[#c8102e] transition-colors">
+            Contacter la régie
+          </a>
+        </article>
       </div>
-    </article>
-  </div>
-</section>
+    </section>
 
-<!-- Pied de page - Zapping -->
-<footer class="bg-white border-t border-gray-200 py-12 px-6">
-  <div class="max-w-7xl mx-auto">
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-200 text-xs">
+  </main>
+
+  <!-- Pied de page - Zapping -->
+  <footer class="bg-white border-t border-gray-200 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
       
-      <div class="space-y-3">
-        <p class="text-base font-bold tracking-widest text-black uppercase">FURNALITY</p>
-        <p class="text-gray-500 leading-relaxed text-xs">
-          Du Son, de l’Image, une Famille.<br>
-          Le média francophone et 100% indépendant.
-        </p>
-        <div class="pt-2 flex flex-col items-start gap-1">
-          <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FLAG/DCNC.svg" alt="Drapeau Commun NC" class="h-6 w-auto object-contain mb-1" />
-          <p class="text-xs font-bold text-black leading-tight">Studio Nouméa,</p>
-          <p class="text-xs font-bold text-black leading-tight">Nouvelle-Calédonie</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-200 text-xs">
+        
+        <div class="space-y-3">
+          <p class="text-base font-bold tracking-widest text-black uppercase">FURNALITY</p>
+          <p class="text-gray-500 leading-relaxed text-xs">
+            Du Son, de l’Image, une Famille.<br>
+            Le média francophone et 100% indépendant.
+          </p>
+          <div class="pt-2 flex flex-col items-start gap-1">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FLAG/DCNC.svg" alt="Drapeau Commun NC" class="h-6 w-auto object-contain mb-1" />
+            <p class="text-xs font-bold text-black leading-tight">Studio Nouméa,</p>
+            <p class="text-xs font-bold text-black leading-tight">Nouvelle-Calédonie</p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Furnality</h4>
+          <nav id="footer-furnality" class="flex flex-col gap-2" aria-label="Réseaux Furnality">
+            <!-- Injecté dynamiquement via Cloudflare Worker D1 -->
+          </nav>
+        </div>
+
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Office Broadcaster</h4>
+          <nav id="footer-office" class="flex flex-col gap-2" aria-label="Réseaux Office Broadcaster">
+            <!-- Injecté dynamiquement via Cloudflare Worker D1 -->
+          </nav>
+        </div>
+
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Chaînes & Marques</h4>
+          <nav id="footer-channels" class="flex flex-col gap-2" aria-label="Réseaux Chaînes">
+            <!-- Injecté dynamiquement via Cloudflare Worker D1 -->
+          </nav>
+        </div>
+
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Informations & Légal</h4>
+          <nav class="flex flex-col gap-2" aria-label="Registre Juridique Legacy">
+            <a href="/legacy/mentions-legales.html" class="footer-link">Mentions Légales</a>
+            <a href="/legacy/cgu-conditions.html" class="footer-link">CGU & Conditions</a>
+            <a href="/legacy/confidentialite-donnees.html" class="footer-link">Confidentialité</a>
+            <a href="/legacy/gestion-cookies.html" class="footer-link">Traceurs & Cookies</a>
+            <a href="/legacy/charte-antenne.html" class="footer-link">Charte des Antennes</a>
+            <a href="/legacy/acces-restreint.html" class="footer-link">Accès Restreints</a>
+            <a href="/legacy/devenir-membre.html" class="footer-link">Devenir Membre</a>
+            <a href="/legacy/fondateurs-contributeurs.html" class="footer-link">Fondateurs & Crédits</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div class="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <p>&copy; 2018 - 2027 Furnality | Tous droits réservés.</p>
+        <div class="flex items-center gap-2">
+          <span class="font-semibold text-gray-700">Furnality Studio</span>
         </div>
       </div>
 
-      <div>
-        <h4 class="eyebrow text-xs mb-4">Furnality</h4>
-        <nav id="footer-furnality" class="flex flex-col gap-2" aria-label="Réseaux Furnality">
-          <!-- Injecté dynamiquement depuis Cloudflare D1 -->
-        </nav>
-      </div>
-
-      <div>
-        <h4 class="eyebrow text-xs mb-4">Office Broadcaster</h4>
-        <nav id="footer-office" class="flex flex-col gap-2" aria-label="Réseaux Office Broadcaster">
-          <!-- Injecté dynamiquement depuis Cloudflare D1 -->
-        </nav>
-      </div>
-
-      <div>
-        <h4 class="eyebrow text-xs mb-4">Chaînes & Marques</h4>
-        <nav id="footer-channels" class="flex flex-col gap-2" aria-label="Réseaux Chaînes">
-          <!-- Injecté dynamiquement depuis Cloudflare D1 -->
-        </nav>
-      </div>
-
-      <div>
-        <h4 class="eyebrow text-xs mb-4">Informations & Légal</h4>
-        <nav class="flex flex-col gap-2" aria-label="Registre Juridique Legacy">
-          <a href="/legacy/mentions-legales.html" class="footer-link">Mentions Légales</a>
-          <a href="/legacy/cgu-conditions.html" class="footer-link">CGU & Conditions</a>
-          <a href="/legacy/confidentialite-donnees.html" class="footer-link">Confidentialité</a>
-          <a href="/legacy/gestion-cookies.html" class="footer-link">Traceurs & Cookies</a>
-          <a href="/legacy/charte-antenne.html" class="footer-link">Charte des Antennes</a>
-          <a href="/legacy/acces-restreint.html" class="footer-link">Accès Restreints</a>
-          <a href="/legacy/devenir-membre.html" class="footer-link">Devenir Membre</a>
-          <a href="/legacy/fondateurs-contributeurs.html" class="footer-link">Fondateurs & Crédits</a>
-        </nav>
-      </div>
-
     </div>
-
-    <div class="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-      <p>&copy; 2018 - 2027 Furnality | Tous droits réservés.</p>
-      <div class="flex items-center gap-2">
-        <span class="font-semibold text-gray-700">Furnality Studio</span>
-      </div>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
   <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/zapping.js?v=8"></script>
 </body>
