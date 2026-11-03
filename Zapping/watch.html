@@ -9,7 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
 
-  <!-- Ressources Centralisées -->
+  <!-- Ressources Centralisées (Dépôt Asset) -->
   <link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/FAV%20-%20Zapping.svg">
   <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/global.css?v=20">
   <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/zapping.css?v=1">
@@ -63,15 +63,14 @@
         
         <!-- Bouton Retour -->
         <div>
-          <a href="javascript:history.back()" class="inline-flex items-center gap-2 text-xs font-mono text-gray-400 hover:text-white uppercase tracking-wider transition-colors">
+          <a href="https://furnalitynetwork.github.io/Zapping" class="inline-flex items-center gap-2 text-xs font-mono text-gray-400 hover:text-white uppercase tracking-wider transition-colors">
             <i data-lucide="arrow-left" class="w-4 h-4"></i>
             <span>Retour au catalogue</span>
           </a>
         </div>
 
-        <!-- Zone du Lecteur Médias (Remplie dynamiquement par watch.js) -->
+        <!-- Zone du Lecteur Médias (Vidéo ou Audio généré par watch.js) -->
         <div id="player-wrapper" class="w-full bg-gray-950 border border-gray-800 relative min-h-[300px] md:min-h-[500px] flex items-center justify-center">
-          <!-- Skeleton de chargement -->
           <div class="animate-pulse flex flex-col items-center gap-3 text-gray-600">
             <i data-lucide="loader-2" class="w-8 h-8 animate-spin"></i>
             <span class="text-xs font-mono uppercase tracking-widest">Chargement du flux...</span>
@@ -81,7 +80,13 @@
         <!-- Méta-données du Programme -->
         <div id="show-metadata" class="pt-4 border-t border-gray-800 space-y-3">
           <div class="flex flex-wrap items-center gap-3 text-xs font-mono">
-            <span id="badge-broadcaster" class="px-2.5 py-1 bg-white text-black font-bold uppercase">—</span>
+            <!-- Logo de la chaîne / station -->
+            <img id="broadcaster-logo" src="" alt="Chaîne" class="h-7 md:h-8 w-auto object-contain hidden" onerror="this.style.display='none'">
+            
+            <!-- Badge texte de secours si aucun logo -->
+            <span id="badge-broadcaster" class="px-2.5 py-1 bg-white text-black font-bold uppercase hidden">—</span>
+            
+            <!-- Badge de catégorie -->
             <span id="badge-category" class="px-2.5 py-1 bg-gray-800 text-gray-300 uppercase">—</span>
           </div>
           <h1 id="media-title" class="text-2xl md:text-4xl font-extrabold tracking-tight text-white">
@@ -100,14 +105,14 @@
       <div class="max-w-7xl mx-auto">
         <div class="flex items-center justify-between border-b border-gray-200 pb-4 mb-8">
           <div>
-            <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-1">Guide des émission</p>
+            <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-1">Guide des émissions</p>
             <h2 id="episodes-title" class="text-2xl font-extrabold text-black">Épisodes & Contenus</h2>
           </div>
           <span id="episodes-count" class="text-xs font-mono text-gray-400">0 épisode(s)</span>
         </div>
 
         <div id="episodes-grid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Injecté dynamiquement depuis watch.js -->
+          <!-- Injecté dynamiquement par watch.js -->
         </div>
       </div>
     </section>
@@ -121,7 +126,7 @@
         </div>
 
         <div id="channel-shows-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <!-- Injecté dynamiquement depuis watch.js -->
+          <!-- Injecté dynamiquement par watch.js -->
         </div>
       </div>
     </section>
