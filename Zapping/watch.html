@@ -23,7 +23,6 @@
   <header class="top-nav fixed top-0 z-40 w-full px-6 py-4 md:px-12 bg-white/95 backdrop-blur-md border-b border-gray-200">
     <nav class="relative mx-auto flex max-w-7xl items-center justify-between" aria-label="Navigation principale">
       
-      <!-- Zone Logos (Seuls les éléments <a> sont cliquables) -->
       <div class="logo-box flex items-center gap-3 select-none">
         <a href="https://furnalitynetwork.github.io" class="flex-shrink-0" title="Retour à l'accueil Furnality">
           <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/Furnality%20Logo.svg" alt="Furnality" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
@@ -46,7 +45,6 @@
         </button>
       </div>
 
-      <!-- Menu Mobile -->
       <div id="mobile-menu" class="mobile-menu hidden absolute top-full left-0 right-0 flex-col gap-4 p-6 bg-white border-b border-gray-200 shadow-lg md:hidden">
         <a href="https://furnalitynetwork.github.io/Zapping#chaines" class="nav-link">Canaux & Antennes</a>
         <a href="https://furnalitynetwork.github.io/Zapping#programmes" class="nav-link">Grille & Univers</a>
@@ -61,7 +59,6 @@
     <section class="bg-black text-white py-8 md:py-12 px-6 md:px-12 border-b border-gray-800">
       <div class="max-w-7xl mx-auto space-y-6">
         
-        <!-- Bouton Retour -->
         <div>
           <a href="https://furnalitynetwork.github.io/Zapping" class="inline-flex items-center gap-2 text-xs font-mono text-gray-400 hover:text-white uppercase tracking-wider transition-colors">
             <i data-lucide="arrow-left" class="w-4 h-4"></i>
@@ -69,7 +66,7 @@
           </a>
         </div>
 
-        <!-- Zone du Lecteur Médias (Vidéo ou Audio généré par watch.js) -->
+        <!-- Zone du Lecteur Médias (Compatible MP4 direct Cloudflare R2 ou YouTube) -->
         <div id="player-wrapper" class="w-full bg-gray-950 border border-gray-800 relative min-h-[300px] md:min-h-[500px] flex items-center justify-center">
           <div class="animate-pulse flex flex-col items-center gap-3 text-gray-600">
             <i data-lucide="loader-2" class="w-8 h-8 animate-spin"></i>
@@ -77,16 +74,15 @@
           </div>
         </div>
 
-        <!-- Méta-données du Programme -->
+        <!-- Méta-données du Programme & Logo de la chaîne -->
         <div id="show-metadata" class="pt-4 border-t border-gray-800 space-y-3">
           <div class="flex flex-wrap items-center gap-3 text-xs font-mono">
-            <!-- Logo de la chaîne / station -->
+            <!-- Logo dynamique de la chaîne / station -->
             <img id="broadcaster-logo" src="" alt="Chaîne" class="h-7 md:h-8 w-auto object-contain hidden" onerror="this.style.display='none'">
             
-            <!-- Badge texte de secours si aucun logo -->
+            <!-- Badge texte de secours -->
             <span id="badge-broadcaster" class="px-2.5 py-1 bg-white text-black font-bold uppercase hidden">—</span>
             
-            <!-- Badge de catégorie -->
             <span id="badge-category" class="px-2.5 py-1 bg-gray-800 text-gray-300 uppercase">—</span>
           </div>
           <h1 id="media-title" class="text-2xl md:text-4xl font-extrabold tracking-tight text-white">
