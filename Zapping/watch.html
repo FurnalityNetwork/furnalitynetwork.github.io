@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture — Zapping by Furnality</title>
+
+  <!-- Tailwind CSS & Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+  <!-- Ressources Centralisées -->
+  <link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/FAV%20-%20Zapping.svg">
+  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/global.css?v=20">
+  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/zapping.css?v=1">
+
+  <!-- Script global centralisé -->
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/global.js?v=1"></script>
+</head>
+<body class="bg-white text-gray-900 antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Navigation principale -->
+  <header class="top-nav fixed top-0 z-40 w-full px-6 py-4 md:px-12 bg-white/95 backdrop-blur-md border-b border-gray-200">
+    <nav class="relative mx-auto flex max-w-7xl items-center justify-between" aria-label="Navigation principale">
+      
+      <!-- Zone Logos (Seuls les éléments <a> sont cliquables) -->
+      <div class="logo-box flex items-center gap-3 select-none">
+        <a href="https://furnalitynetwork.github.io" class="flex-shrink-0" title="Retour à l'accueil Furnality">
+          <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/Furnality%20Logo.svg" alt="Furnality" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
+        </a>
+        <span class="logo-separator text-xs text-gray-300">|</span>
+        <a href="https://furnalitynetwork.github.io/Zapping" class="flex-shrink-0" title="Zapping Home">
+          <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/ZAPPING.svg" alt="Zapping" class="h-8 w-auto object-contain" onerror="this.style.display='none'">
+        </a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="https://furnalitynetwork.github.io/Zapping#chaines" class="nav-link text-xs font-bold uppercase tracking-wider text-gray-600 hover:text-black transition-colors">Canaux & Antennes</a>
+        <a href="https://furnalitynetwork.github.io/Zapping#programmes" class="nav-link text-xs font-bold uppercase tracking-wider text-gray-600 hover:text-black transition-colors">Grille & Univers</a>
+      </div>
+ 
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="primary-button hidden md:inline-flex">Contact</a>
+        <button id="menu-button" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-gray-200 md:hidden" aria-label="Ouvrir le menu">
+          <i data-lucide="menu" width="18" height="18"></i>
+        </button>
+      </div>
+
+      <!-- Menu Mobile -->
+      <div id="mobile-menu" class="mobile-menu hidden absolute top-full left-0 right-0 flex-col gap-4 p-6 bg-white border-b border-gray-200 shadow-lg md:hidden">
+        <a href="https://furnalitynetwork.github.io/Zapping#chaines" class="nav-link">Canaux & Antennes</a>
+        <a href="https://furnalitynetwork.github.io/Zapping#programmes" class="nav-link">Grille & Univers</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-20 flex-grow">
+    
+    <!-- Section Lecteur & Informations -->
+    <section class="bg-black text-white py-8 md:py-12 px-6 md:px-12 border-b border-gray-800">
+      <div class="max-w-7xl mx-auto space-y-6">
+        
+        <!-- Bouton Retour -->
+        <div>
+          <a href="javascript:history.back()" class="inline-flex items-center gap-2 text-xs font-mono text-gray-400 hover:text-white uppercase tracking-wider transition-colors">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Retour au catalogue</span>
+          </a>
+        </div>
+
+        <!-- Zone du Lecteur Médias (Remplie dynamiquement par watch.js) -->
+        <div id="player-wrapper" class="w-full bg-gray-950 border border-gray-800 relative min-h-[300px] md:min-h-[500px] flex items-center justify-center">
+          <!-- Skeleton de chargement -->
+          <div class="animate-pulse flex flex-col items-center gap-3 text-gray-600">
+            <i data-lucide="loader-2" class="w-8 h-8 animate-spin"></i>
+            <span class="text-xs font-mono uppercase tracking-widest">Chargement du flux...</span>
+          </div>
+        </div>
+
+        <!-- Méta-données du Programme -->
+        <div id="show-metadata" class="pt-4 border-t border-gray-800 space-y-3">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono">
+            <span id="badge-broadcaster" class="px-2.5 py-1 bg-white text-black font-bold uppercase">—</span>
+            <span id="badge-category" class="px-2.5 py-1 bg-gray-800 text-gray-300 uppercase">—</span>
+          </div>
+          <h1 id="media-title" class="text-2xl md:text-4xl font-extrabold tracking-tight text-white">
+            Chargement...
+          </h1>
+          <p id="media-description" class="text-sm md:text-base text-gray-400 max-w-4xl leading-relaxed">
+            ...
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section Épisodes & Saison -->
+    <section id="episodes-section" class="py-12 px-6 md:px-12 border-b border-gray-200">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-center justify-between border-b border-gray-200 pb-4 mb-8">
+          <div>
+            <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-1">Guide des émission</p>
+            <h2 id="episodes-title" class="text-2xl font-extrabold text-black">Épisodes & Contenus</h2>
+          </div>
+          <span id="episodes-count" class="text-xs font-mono text-gray-400">0 épisode(s)</span>
+        </div>
+
+        <div id="episodes-grid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Injecté dynamiquement depuis watch.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Autres émissions de la même chaîne -->
+    <section id="channel-shows-section" class="py-12 px-6 md:px-12 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="border-b border-gray-200 pb-4 mb-8">
+          <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-1">Sur la même antenne</p>
+          <h2 id="channel-shows-title" class="text-2xl font-extrabold text-black">Autres programmes de la chaîne</h2>
+        </div>
+
+        <div id="channel-shows-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Injecté dynamiquement depuis watch.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Contact / Régie -->
+    <section id="contact" class="py-16 px-6 md:px-12 border-t border-gray-200">
+      <div class="max-w-7xl mx-auto">
+        <article class="feature-panel p-8 md:p-10 bg-gray-50 border border-gray-200 border-l-4 border-l-black flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div class="max-w-2xl">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/OBC%20-%20Office%20BroadCaster.svg" alt="Office Broadcaster" class="h-9 w-auto object-contain mb-4" onerror="this.style.display='none'">
+            <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-2">Office BroadCaster</p>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-black">Rejoindre le réseau de diffusion.</h2>
+            <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+              Projets de diffusion, partenariats de flux ou propositions de contenus : nous accompagnons les formats originaux et la création indépendante.
+            </p>
+          </div>
+          <a href="https://furnalitynetwork.github.io/OfficeBroadCaster/" class="primary-button flex-shrink-0 px-6 py-3 bg-black text-white font-bold text-xs uppercase tracking-widest transition-colors">
+            Contacter la régie
+          </a>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pied de page officiel -->
+  <footer class="bg-white border-t border-gray-200 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-200 text-xs">
+        
+        <div class="space-y-3">
+          <p class="text-base font-bold tracking-widest text-black uppercase">FURNALITY</p>
+          <p class="text-gray-500 leading-relaxed text-xs">
+            Du Son, de l’Image, une Famille.<br>
+            Le média francophone et 100% indépendant.
+          </p>
+          <div class="pt-2 flex flex-col items-start gap-1">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FLAG/DCNC.svg" alt="Drapeau Commun NC" class="h-6 w-auto object-contain mb-1" />
+            <p class="text-xs font-bold text-black leading-tight">Studio Nouméa,</p>
+            <p class="text-xs font-bold text-black leading-tight">Nouvelle-Calédonie</p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Furnality</h4>
+          <nav id="footer-furnality" class="flex flex-col gap-2" aria-label="Réseaux Furnality"></nav>
+        </div>
+
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Office Broadcaster</h4>
+          <nav id="footer-office" class="flex flex-col gap-2" aria-label="Réseaux Office Broadcaster"></nav>
+        </div>
+
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Chaînes & Marques</h4>
+          <nav id="footer-channels" class="flex flex-col gap-2" aria-label="Réseaux Chaînes"></nav>
+        </div>
+
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Informations & Légal</h4>
+          <nav class="flex flex-col gap-2" aria-label="Registre Juridique Legacy">
+            <a href="/legacy/mentions-legales.html" class="footer-link">Mentions Légales</a>
+            <a href="/legacy/cgu-conditions.html" class="footer-link">CGU & Conditions</a>
+            <a href="/legacy/confidentialite-donnees.html" class="footer-link">Confidentialité</a>
+            <a href="/legacy/gestion-cookies.html" class="footer-link">Traceurs & Cookies</a>
+            <a href="/legacy/charte-antenne.html" class="footer-link">Charte des Antennes</a>
+            <a href="/legacy/acces-restreint.html" class="footer-link">Accès Restreints</a>
+            <a href="/legacy/devenir-membre.html" class="footer-link">Devenir Membre</a>
+            <a href="/legacy/fondateurs-contributeurs.html" class="footer-link">Fondateurs & Crédits</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div class="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <p>&copy; 2018 - 2027 Furnality | Tous droits réservés.</p>
+        <span class="font-semibold text-gray-700">Furnality Studio</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/watch.js?v=1"></script>
+</body>
+</html>
