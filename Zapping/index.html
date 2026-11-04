@@ -1,4 +1,4 @@
-  <!doctype html>
+<!doctype html>
 <html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -107,7 +107,7 @@
         <div class="mt-12">
           <h3 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 flex items-center gap-2">
             <i data-lucide="radio" class="w-4 h-4 text-black"></i>
-            <span>Radio</span>
+            <span>Radio & Stations Audio</span>
           </h3>
           <div id="radio-channels-grid" class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             <!-- Skeletons de chargement temporaires -->
@@ -125,6 +125,15 @@
             <p class="eyebrow mb-1 text-xs font-mono text-gray-400 uppercase">Catalogue</p>
             <h2 class="text-2xl md:text-3xl font-extrabold text-black">Nos émissions.</h2>
           </div>
+
+          <!-- Onglets de filtrage du catalogue (Structure prête pour ton JS) -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 font-mono text-xs">
+            <button type="button" class="px-3 py-1.5 bg-black text-white font-bold uppercase tracking-wider border border-black">Tous</button>
+            <button type="button" class="px-3 py-1.5 bg-white text-gray-600 hover:text-black border border-gray-200 hover:border-black uppercase tracking-wider transition-colors">Séries TV</button>
+            <button type="button" class="px-3 py-1.5 bg-white text-gray-600 hover:text-black border border-gray-200 hover:border-black uppercase tracking-wider transition-colors">Podcasts</button>
+            <button type="button" class="px-3 py-1.5 bg-white text-gray-600 hover:text-black border border-gray-200 hover:border-black uppercase tracking-wider transition-colors">Documentaires</button>
+          </div>
+        </div>
 
         <!-- Injection des émissions Cloudflare D1 -->
         <div id="shows-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -150,20 +159,20 @@
     </section>
 
     <!-- Section : Contact / Office Broadcaster -->
-    <section id="contact" class="section-space line-top py-16 px-6 md:px-12 border-t border-gray-200">
+    <section id="contact" class="section-space py-16 px-6 md:px-12 border-t border-gray-200 scroll-mt-20">
       <div class="section-inner max-w-7xl mx-auto">
-        <article class="feature-panel p-8 bg-gray-50 border border-gray-200 border-l-4 border-l-black">
+        <article class="feature-panel p-8 md:p-10 bg-gray-50 border border-gray-200 border-l-4 border-l-black flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div class="max-w-2xl">
-            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/OBC%20-%20Office%20BroadCaster.svg" alt="Office Broadcaster" class="h-10 w-auto object-contain mb-4" onerror="this.style.display='none'">
-            <p class="eyebrow mb-3">Office BroadCaster</p>
-            <h2 class="text-3xl font-bold text-black">Rejoindre le réseau de diffusion.</h2>
-            <p class="mt-4 text-gray-600 leading-relaxed">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/OBC%20-%20Office%20BroadCaster.svg" alt="Office Broadcaster" class="h-9 w-auto object-contain mb-4" onerror="this.style.display='none'">
+            <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-2">Office BroadCaster</p>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-black">Rejoindre le réseau de diffusion.</h2>
+            <p class="mt-3 text-sm text-gray-600 leading-relaxed">
               Projets de diffusion, partenariats de flux ou propositions de contenus : nous accompagnons les formats originaux et la création indépendante.
             </p>
-            <a href="https://furnalitynetwork.github.io/OfficeBroadCaster/" class="primary-button mt-6">
-              Contacter la régie
-            </a>
           </div>
+          <a href="https://furnalitynetwork.github.io/OfficeBroadCaster/" class="primary-button flex-shrink-0 px-6 py-3 bg-black text-white font-bold text-xs uppercase tracking-widest hover:bg-[#c8102e] transition-colors">
+            Contacter la régie
+          </a>
         </article>
       </div>
     </section>
