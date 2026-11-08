@@ -84,7 +84,7 @@
           </div>
         </div>
 
-        <aside id="episode-panel" class="show-card bg-white">
+        <aside id="episode-panel" class="show-card bg-white" style="height:auto">
           <div class="show-body">
             <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-2">En cours de lecture</p>
             <h2 id="episode-title" class="text-xl md:text-2xl font-bold text-black leading-snug">—</h2>
@@ -97,6 +97,12 @@
             <div class="mt-6 pt-5 border-t border-gray-200 flex items-center gap-3">
               <img id="broadcaster-logo" src="" alt="Chaîne" class="h-8 w-auto object-contain hidden" onerror="this.style.display='none'">
               <span id="badge-broadcaster" class="show-channel-badge hidden">—</span>
+            </div>
+
+            <!-- À suivre : prochains épisodes de la série -->
+            <div id="upnext" class="hidden mt-6 pt-5 border-t border-gray-200">
+              <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-4">À suivre</p>
+              <div id="upnext-list" class="flex flex-col gap-4"></div>
             </div>
           </div>
         </aside>
