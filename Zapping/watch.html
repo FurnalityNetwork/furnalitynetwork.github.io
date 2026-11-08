@@ -22,7 +22,7 @@
   <!-- Navigation principale -->
   <header class="top-nav fixed top-0 z-40 w-full px-6 py-4 md:px-12 bg-white/95 backdrop-blur-md border-b border-gray-200">
     <nav class="relative mx-auto flex max-w-7xl items-center justify-between" aria-label="Navigation principale">
-      
+
       <div class="logo-box flex items-center gap-3 select-none">
         <a href="https://furnalitynetwork.github.io" class="flex-shrink-0" title="Retour à l'accueil Furnality">
           <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/Furnality%20Logo.svg" alt="Furnality" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
@@ -37,7 +37,7 @@
         <a href="https://furnalitynetwork.github.io/Zapping#chaines" class="nav-link text-xs font-bold uppercase tracking-wider text-gray-600 hover:text-black transition-colors">Canaux & Antennes</a>
         <a href="https://furnalitynetwork.github.io/Zapping#programmes" class="nav-link text-xs font-bold uppercase tracking-wider text-gray-600 hover:text-black transition-colors">Grille & Univers</a>
       </div>
- 
+
       <div class="flex items-center gap-3">
         <button id="menu-button" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-gray-200 md:hidden" aria-label="Ouvrir le menu">
           <i data-lucide="menu" width="18" height="18"></i>
@@ -51,78 +51,85 @@
     </nav>
   </header>
 
-  <main class="pt-20 flex-grow">
-    
-    <!-- Section Lecteur & Informations -->
-    <section id="player-hero-section" class="bg-black text-white py-8 md:py-12 px-6 md:px-12 border-b border-gray-800">
-      <div class="max-w-7xl mx-auto space-y-6">
-        
-        <div>
-          <a href="https://furnalitynetwork.github.io/Zapping" class="inline-flex items-center gap-2 text-xs font-mono text-gray-400 hover:text-white uppercase tracking-wider transition-colors">
-            <i data-lucide="arrow-left" class="w-4 h-4"></i>
-            <span>Retour au catalogue</span>
-          </a>
-        </div>
+  <main id="watch-main" class="pt-20 flex-grow">
 
-        <!-- Zone du Lecteur Médias (Compatible MP4 direct Cloudflare R2 ou YouTube) -->
-        <div id="player-wrapper" class="w-full bg-gray-950 border border-gray-800 relative min-h-[300px] md:min-h-[500px] flex items-center justify-center">
-          <div class="animate-pulse flex flex-col items-center gap-3 text-gray-600">
+    <!-- En-tête simple (comme Zapping) -->
+    <section id="watch-hero" class="hero px-6 py-12 md:py-16 md:px-12 border-b border-gray-100">
+      <div class="relative mx-auto w-full max-w-7xl z-10">
+        <a href="https://furnalitynetwork.github.io/Zapping" class="inline-flex items-center gap-2 mb-8 text-xs font-bold uppercase tracking-wider text-gray-500 hover:text-[#c8102e] transition-colors">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span>Retour au catalogue</span>
+        </a>
+
+        <div class="max-w-3xl">
+          <div id="hero-pill" class="inline-flex items-center gap-2 px-2.5 py-1 bg-black text-white text-[10px] font-extrabold uppercase tracking-widest mb-4">
+            Zapping
+          </div>
+          <h1 id="media-title" class="text-4xl md:text-6xl font-bold tracking-tight text-black leading-tight">
+            Chargement...
+          </h1>
+          <p id="media-description" class="mt-4 text-base md:text-lg text-gray-600 max-w-xl leading-relaxed"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lecteur + panneau de l'épisode en cours -->
+    <section id="player-section" class="px-6 py-12 md:px-12 border-b border-gray-200">
+      <div class="max-w-7xl mx-auto grid gap-8 lg:gap-10 lg:grid-cols-[minmax(0,1.7fr)_minmax(280px,0.8fr)] items-start">
+
+        <div id="player-wrapper" class="w-full">
+          <div class="aspect-video w-full bg-gray-50 border border-gray-200 animate-pulse flex flex-col items-center justify-center gap-3 text-gray-400">
             <i data-lucide="loader-2" class="w-8 h-8 animate-spin"></i>
             <span class="text-xs font-mono uppercase tracking-widest">Chargement du flux...</span>
           </div>
         </div>
 
-        <!-- Méta-données du Programme & Logo de la chaîne -->
-        <div id="show-metadata" class="pt-4 border-t border-gray-800 space-y-3">
-          <div class="flex flex-wrap items-center gap-3 text-xs font-mono">
-            <!-- Logo dynamique de la chaîne / station -->
-            <img id="broadcaster-logo" src="" alt="Chaîne" class="h-7 md:h-8 w-auto object-contain hidden" onerror="this.style.display='none'">
-            
-            <!-- Badge texte de secours -->
-            <span id="badge-broadcaster" class="px-2.5 py-1 bg-white text-black font-bold uppercase hidden">—</span>
-            
-            <span id="badge-category" class="px-2.5 py-1 bg-gray-800 text-gray-300 uppercase">—</span>
+        <aside id="episode-panel" class="show-card bg-white">
+          <div class="show-body">
+            <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-2">En cours de lecture</p>
+            <h2 id="episode-title" class="text-xl md:text-2xl font-bold text-black leading-snug">—</h2>
 
-            <!-- Badge Saison / Épisode -->
-            <span id="badge-season-episode" class="px-2.5 py-1 bg-gray-800 text-gray-300 uppercase hidden">—</span>
+            <div class="flex flex-wrap items-center gap-2 mt-4">
+              <span id="badge-season-episode" class="show-channel-badge hidden">—</span>
+              <span id="badge-production" class="show-category hidden">—</span>
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-gray-200 flex items-center gap-3">
+              <img id="broadcaster-logo" src="" alt="Chaîne" class="h-8 w-auto object-contain hidden" onerror="this.style.display='none'">
+              <span id="badge-broadcaster" class="show-channel-badge hidden">—</span>
+            </div>
           </div>
-          <h1 id="media-title" class="text-2xl md:text-4xl font-extrabold tracking-tight text-white">
-            Chargement...
-          </h1>
-          <p id="media-description" class="text-sm md:text-base text-gray-400 max-w-4xl leading-relaxed">
-            ...
-          </p>
-        </div>
+        </aside>
 
       </div>
     </section>
 
-    <!-- Section Épisodes & Saison -->
-    <section id="episodes-section" class="py-12 px-6 md:px-12 border-b border-gray-200">
+    <!-- Section Épisodes & Saisons (même série) -->
+    <section id="episodes-section" class="py-16 px-6 md:px-12 border-b border-gray-200 bg-gray-50/50">
       <div class="max-w-7xl mx-auto">
-        <div class="flex items-center justify-between border-b border-gray-200 pb-4 mb-8">
-          <div>
-            <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-1">Guide des émissions</p>
-            <h2 id="episodes-title" class="text-2xl font-extrabold text-black">Épisodes & Contenus</h2>
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 border-b border-gray-200 mb-8">
+          <div class="pb-4">
+            <p id="episodes-eyebrow" class="eyebrow mb-1 text-xs font-mono text-gray-400 uppercase">Guide des émissions</p>
+            <h2 id="episodes-title" class="text-2xl md:text-3xl font-extrabold text-black">Épisodes</h2>
           </div>
-          <span id="episodes-count" class="text-xs font-mono text-gray-400">0 épisode(s)</span>
+          <div id="season-tabs" role="tablist" aria-label="Choisir une saison" class="flex gap-6 overflow-x-auto"></div>
         </div>
 
-        <div id="episodes-grid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div id="episodes-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <!-- Injecté dynamiquement par watch.js -->
         </div>
       </div>
     </section>
 
-    <!-- Section Autres émissions de la même chaîne -->
-    <section id="channel-shows-section" class="py-12 px-6 md:px-12 bg-gray-50">
+    <!-- Section Autres programmes de la même chaîne -->
+    <section id="channel-shows-section" class="py-16 px-6 md:px-12">
       <div class="max-w-7xl mx-auto">
         <div class="border-b border-gray-200 pb-4 mb-8">
-          <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-1">Sur la même antenne</p>
-          <h2 id="channel-shows-title" class="text-2xl font-extrabold text-black">Autres programmes de la chaîne</h2>
+          <p class="eyebrow mb-1 text-xs font-mono text-gray-400 uppercase">Sur la même chaîne</p>
+          <h2 id="channel-shows-title" class="text-2xl md:text-3xl font-extrabold text-black">Autres programmes</h2>
         </div>
 
-        <div id="channel-shows-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div id="channel-shows-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <!-- Injecté dynamiquement par watch.js -->
         </div>
       </div>
@@ -133,9 +140,9 @@
   <!-- Pied de page officiel -->
   <footer class="bg-white border-t border-gray-200 py-12 px-6">
     <div class="max-w-7xl mx-auto">
-      
+
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-200 text-xs">
-        
+
         <div class="space-y-3">
           <p class="text-base font-bold tracking-widest text-black uppercase">FURNALITY</p>
           <p class="text-gray-500 leading-relaxed text-xs">
@@ -188,6 +195,6 @@
     </div>
   </footer>
 
-  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/watch.js?v=1"></script>
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/watch.js?v=2"></script>
 </body>
 </html>
