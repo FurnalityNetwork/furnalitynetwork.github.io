@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furnality News — L'actualité du réseau</title>
+  <meta name="description" content="L'actualité de Furnality News : à la une, rubriques et dossiers de la rédaction.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+  <link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/FAV%20-%20News.svg">
+  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/global.css?v=20">
+  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/news.css?v=2">
+
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/global.js?v=1"></script>
+</head>
+<body class="bg-white text-gray-900 antialiased min-h-screen flex flex-col justify-between" data-page="home">
+
+  <header class="top-nav fixed top-0 z-50 w-full px-6 py-4 md:px-12 bg-white/95 backdrop-blur-md border-b border-gray-200">
+    <nav class="relative mx-auto flex max-w-7xl items-center justify-between gap-6" aria-label="Navigation principale">
+      <div class="logo-box flex items-center gap-3 select-none flex-shrink-0">
+        <a href="https://furnalitynetwork.github.io" class="flex-shrink-0" title="Retour à l'accueil Furnality">
+          <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/Furnality%20Logo.svg" alt="Furnality" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
+        </a>
+        <span class="logo-separator text-xs text-gray-300">|</span>
+        <a href="https://furnalitynetwork.github.io/news/" class="flex-shrink-0" title="Furnality News">
+          <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/CHANNEL/News.svg" alt="Furnality News" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
+        </a>
+      </div>
+
+      <div class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="https://furnalitynetwork.github.io" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-gray-600 hover:text-black">ACCUEIL</a>
+        <a href="https://furnalitynetwork.github.io/Zapping" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-gray-600 hover:text-black">ZAPPING</a>
+        <a href="https://furnalitynetwork.github.io/Radio" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-gray-600 hover:text-black">RADIO</a>
+        <a href="https://furnalitynetwork.github.io/OfficeBroadCaster" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-gray-600 hover:text-black">OFFICE BROADCASTER</a>
+        <a href="https://furnalitynetwork.github.io/news/" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-black">NEWS</a>
+        <a href="https://furnalitynetwork.github.io/CRAN" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-gray-600 hover:text-black">CRAN</a>
+      </div>
+
+      <div class="flex items-center gap-3 flex-shrink-0">
+        <a href="mailto:furnality@gmail.com" class="primary-button hidden lg:inline-flex">Contact</a>
+        <button id="menu-button" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-gray-200 lg:hidden" aria-label="Ouvrir le menu">
+          <i data-lucide="menu" width="18" height="18"></i>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="mobile-menu hidden absolute top-full left-0 right-0 flex-col gap-4 p-6 bg-white border-b border-gray-200 shadow-lg lg:hidden">
+        <a href="https://furnalitynetwork.github.io" class="nav-link">ACCUEIL</a>
+        <a href="https://furnalitynetwork.github.io/Zapping" class="nav-link">ZAPPING</a>
+        <a href="https://furnalitynetwork.github.io/Radio" class="nav-link">RADIO</a>
+        <a href="https://furnalitynetwork.github.io/OfficeBroadCaster" class="nav-link">OFFICE BROADCASTER</a>
+        <a href="https://furnalitynetwork.github.io/news/" class="nav-link">NEWS</a>
+        <a href="https://furnalitynetwork.github.io/CRAN" class="nav-link">CRAN</a>
+        <a href="mailto:furnality@gmail.com" class="primary-button text-center mt-2">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="n-main pt-20">
+    <div class="n-band">
+      <div class="n-wrap">
+        <a class="n-band-title" href="index.html">Furnality News</a>
+        <nav class="n-nav" id="news-nav" aria-label="Rubriques"><a href="index.html" class="is-active">À la une</a></nav>
+        <form class="n-search" id="news-search-form" role="search">
+          <input type="search" id="news-search" placeholder="Rechercher…" aria-label="Rechercher un article">
+        </form>
+        <span class="n-date" id="news-date"></span>
+      </div>
+    </div>
+
+    <div class="n-wrap">
+      <!-- Résultats de recherche -->
+      <div id="n-search-results" hidden></div>
+
+      <!-- Contenu principal -->
+      <div id="n-home-sections">
+        <div class="n-front" id="n-front">
+          <div class="n-lead"><div class="n-skel"></div></div>
+          <div class="n-side"><div class="n-skel"></div><div class="n-skel"></div><div class="n-skel"></div><div class="n-skel"></div></div>
+        </div>
+        <div class="n-strip" id="n-strip"></div>
+
+        <section class="n-section">
+          <div class="n-two">
+            <div>
+              <div class="n-sec-head"><h2>Plus d'infos</h2></div>
+              <div class="n-grid2" id="n-more"><div class="n-skel"></div><div class="n-skel"></div></div>
+            </div>
+            <aside class="n-feed">
+              <div class="n-feed-head"><h3>Dernières infos</h3></div>
+              <div class="n-feed-list" id="n-feed-list"></div>
+            </aside>
+          </div>
+        </section>
+
+        <div id="n-rubs"></div>
+
+        <section class="n-tip">
+          <div><h2>Une info à nous signaler ?</h2><p>Une erreur, un sujet à traiter, une précision : écrivez à la rédaction.</p></div>
+          <a class="n-btn n-btn--dark" href="mailto:furnality@gmail.com?subject=Furnality%20News%20%E2%80%94%20Contact%20r%C3%A9daction">Contacter la rédaction</a>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-white border-t border-gray-200 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-200 text-xs">
+        <div class="space-y-3">
+          <p class="text-base font-bold tracking-widest text-black uppercase">FURNALITY</p>
+          <p class="text-gray-500 leading-relaxed text-xs">
+            Du Son, de l’Image, une Famille.<br>
+            Le média francophone et 100% indépendant.
+          </p>
+          <div class="pt-2 flex flex-col items-start gap-1">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FLAG/DCNC.svg" alt="Drapeau Commun NC" class="h-6 w-auto object-contain mb-1" />
+            <p class="text-xs font-bold text-black leading-tight">Studio Nouméa,</p>
+            <p class="text-xs font-bold text-black leading-tight">Nouvelle-Calédonie</p>
+          </div>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Furnality</h4>
+          <nav id="footer-furnality" class="flex flex-col gap-2" aria-label="Réseaux Furnality"></nav>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Office Broadcaster</h4>
+          <nav id="footer-office" class="flex flex-col gap-2" aria-label="Réseaux Office Broadcaster"></nav>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Chaînes & Marques</h4>
+          <nav id="footer-channels" class="flex flex-col gap-2" aria-label="Réseaux Chaînes"></nav>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Informations & Légal</h4>
+          <nav class="flex flex-col gap-2" aria-label="Registre Juridique Legacy">
+            <a href="/legacy/mentions-legales.html" class="footer-link">Mentions Légales</a>
+            <a href="/legacy/cgu-conditions.html" class="footer-link">CGU & Conditions</a>
+            <a href="/legacy/confidentialite-donnees.html" class="footer-link">Confidentialité</a>
+            <a href="/legacy/gestion-cookies.html" class="footer-link">Traceurs & Cookies</a>
+            <a href="/legacy/charte-antenne.html" class="footer-link">Charte des Antennes</a>
+            <a href="/legacy/acces-restreint.html" class="footer-link">Accès Restreints</a>
+            <a href="/legacy/devenir-membre.html" class="footer-link">Devenir Membre</a>
+            <a href="/legacy/fondateurs-contributeurs.html" class="footer-link">Fondateurs & Crédits</a>
+          </nav>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <p>&copy; 2018 - 2027 Furnality | Tous droits réservés.</p>
+        <p class="font-semibold text-gray-700">Furnality Studio</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/news.js?v=2"></script>
+</body>
+</html>
