@@ -4,16 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Furnality — Société de production et de diffusion médiatique indépendante</title>
-  
+  <meta name="description" content="Du Son, de l’Image, une Famille. Présentation officielle du studio Furnality, média francophone et indépendant basé à Nouméa, Nouvelle-Calédonie.">
+
   <!-- Tailwind CSS & Lucide Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
 
   <!-- Ressources centralisées depuis le dépôt Asset -->
-<link rel="icon" type="image/png" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20Furnality.png">
-<link rel="apple-touch-icon" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20Furnality.png">
+  <link rel="icon" type="image/png" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20Furnality.png">
+  <link rel="apple-touch-icon" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20Furnality.png">
   <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/global.css?v=20">
-  
+
   <!-- Script global centralisé -->
   <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/global.js?v=1"></script>
 </head>
@@ -65,88 +66,265 @@
 
   <main class="pt-20">
 
-    <!-- Hero Section -->
-    <section id="accueil" class="hero relative border-b border-gray-200 px-6 py-20 md:px-12">
+    <!-- Bloc 1 : Planche Nouveautés & Informations du Studio -->
+    <section id="accueil" class="hero relative border-b border-gray-200 px-6 py-14 md:py-16 md:px-12">
       <div class="relative mx-auto w-full max-w-7xl z-10">
-        <div class="max-w-3xl">
-          <div class="flex items-center gap-3 mb-4">
-            <p class="eyebrow">Studio de diffusion & Réseau indépendant</p>
+
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-gray-200">
+          <div class="flex items-center gap-3">
+            <span class="inline-block w-2.5 h-2.5" style="background: var(--d9-mvc-primary);"></span>
+            <p class="eyebrow">Planche Studio · Dernières nouveautés & informations</p>
           </div>
-          <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-black leading-tight">
-            Furnality fait vivre les récits à l’image et au son.
-          </h1>
-          <p class="mt-6 text-lg text-gray-600 max-w-2xl leading-relaxed">
-            Nous concevons, produisons et diffusons des expériences télévisées, radiophoniques et médiatiques francophones basées en Nouvelle-Calédonie.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a href="https://furnalitynetwork.github.io/Zapping" class="primary-button">Découvrir le Zapping</a>
-            <a href="#studio" class="secondary-button">En savoir plus</a>
+          <span id="home-noumea-clock" class="text-xs font-mono text-gray-500">Nouméa</span>
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-12 items-stretch">
+          <!-- Carte principale de la planche -->
+          <div class="lg:col-span-7 border border-gray-200 bg-gray-50 p-8 md:p-10 flex flex-col justify-between gap-8">
+            <div>
+              <p class="eyebrow text-xs mb-3">Informations du Studio · Furnality</p>
+              <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-black leading-tight">
+                Furnality fait vivre les récits à l’image et au son.
+              </h1>
+              <p class="mt-5 text-base md:text-lg text-gray-600 leading-relaxed">
+                Nous concevons, produisons et diffusons des expériences télévisées, radiophoniques et médiatiques francophones basées en Nouvelle-Calédonie.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a href="https://furnalitynetwork.github.io/Zapping" class="primary-button">Découvrir le Zapping</a>
+              <a href="#studio" class="secondary-button">À propos du Studio</a>
+            </div>
+          </div>
+
+          <!-- Colonne droite : Fil des dernières nouveautés du Studio -->
+          <div class="lg:col-span-5 flex flex-col justify-between border border-gray-200 bg-white divide-y divide-gray-200">
+            <div class="p-5 bg-gray-50">
+              <p class="eyebrow text-xs" style="color: var(--d9-mvc-primary);">À la une · Dernière info</p>
+              <a id="hero-news-link" href="https://furnalitynetwork.github.io/news" class="block mt-2 group">
+                <h2 id="hero-news-title" class="text-base font-bold text-black group-hover:underline leading-snug">
+                  Chargement des dernières informations du réseau…
+                </h2>
+                <p id="hero-news-meta" class="text-xs text-gray-500 mt-1.5">Furnality News</p>
+              </a>
+            </div>
+
+            <div class="p-5 space-y-1.5">
+              <span class="text-[11px] font-mono font-bold text-gray-400 uppercase">Production & Archivage</span>
+              <p class="text-sm font-bold text-black">Consolidation d’Office BroadCaster (OBC) & SANA</p>
+              <p class="text-xs text-gray-600 leading-relaxed">Production, animation, régie et archivage audiovisuel réunis au sein du studio.</p>
+            </div>
+
+            <div class="p-5 space-y-1.5">
+              <span class="text-[11px] font-mono font-bold text-gray-400 uppercase">Régulation & Éthique</span>
+              <p class="text-sm font-bold text-black">Déploiement du CRAN sur l’ensemble du réseau</p>
+              <p class="text-xs text-gray-600 leading-relaxed">Charte 100 % humaine sans IA, quota francophone et transparence des sources.</p>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Section : Le Studio -->
+    <!-- Bloc 2 : Présentation du Studio -->
     <section id="studio" class="section-space line-top py-16 px-6 md:px-12">
       <div class="section-inner max-w-7xl mx-auto">
         <div class="grid gap-12 lg:grid-cols-12">
-          <div class="lg:col-span-4">
-            <p class="eyebrow mb-2">01 — Le Studio</p>
-            <h2 class="text-3xl font-bold text-black leading-tight">Une présence éditoriale pensée pour le direct.</h2>
+          <div class="lg:col-span-4 space-y-3">
+            <p class="eyebrow">01 — À propos du Studio</p>
+            <h2 class="text-3xl font-bold text-black leading-tight">Un groupe média indépendant né en 2018.</h2>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              Basé à Nouméa en Nouvelle-Calédonie, Furnality réunit création éditoriale, habillage d’antenne, diffusion continue et production audiovisuelle.
+            </p>
           </div>
+
           <div class="lg:col-span-8 space-y-6 text-gray-600 leading-relaxed">
             <p class="text-lg text-black font-semibold">
               Furnality rassemble création, stratégie éditoriale et maîtrise technique pour transformer chaque projet en rendez-vous médiatique.
             </p>
             <p>
-              De la conception des habillages d'antenne à la régie de diffusion multi-plateformes, notre réseau accompagne la création indépendante sur les écrans et les ondes.
+              Fondé en mars 2018 sous l’impulsion d’une démarche indépendante et artisanale, le studio a évolué au fil des années pour structurer un véritable écosystème francophone : chaînes thématiques, stations de radio, pôle d’information Furnality News, plateforme numérique Zapping et studio de production Office BroadCaster.
             </p>
+            <p>
+              Notre mission reste inchangée : défendre une création libre, lisible et authentique, portée par des équipes et des créateurs humains, loin des formats standardisés.
+            </p>
+
+            <!-- Repères clés du Studio -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 border border-gray-200 bg-gray-50">
+              <div class="p-5 border-b sm:border-b-0 border-r border-gray-200">
+                <p class="text-2xl font-bold text-black">2018</p>
+                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">Fondation du studio</p>
+              </div>
+              <div class="p-5 border-b sm:border-b-0 sm:border-r border-gray-200">
+                <p class="text-2xl font-bold text-black">Nouméa</p>
+                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">Nouvelle-Calédonie</p>
+              </div>
+              <div class="p-5 border-r border-gray-200">
+                <p class="text-2xl font-bold text-black">20</p>
+                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">Stations RFF & Radio</p>
+              </div>
+              <div class="p-5">
+                <p class="text-2xl font-bold text-black">100 %</p>
+                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">Indépendant & Sans IA</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section : Expertises -->
+    <!-- Bloc 3 : Domaines d'Antenne -->
     <section id="expertises" class="section-space line-top bg-gray-50 py-16 px-6 md:px-12 border-t border-gray-200">
       <div class="section-inner max-w-7xl mx-auto">
         <p class="eyebrow mb-2">02 — Domaines d'Antenne</p>
         <h2 class="text-3xl font-bold text-black mb-10">Trois piliers de diffusion.</h2>
-        
+
         <div class="grid gap-6 md:grid-cols-3">
-          <article class="p-8 border border-gray-200 bg-white space-y-4">
-            <span class="text-xs font-mono font-bold text-gray-400">01 / TV</span>
-            <h3 class="text-xl font-bold text-black">Télévision & Flux</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">Émissions, captations, habillages visuels et régie multicaméra pour les canaux du réseau.</p>
+          <a href="https://furnalitynetwork.github.io/Zapping" class="group p-8 border border-gray-200 border-t-4 bg-white flex flex-col justify-between gap-6 hover:border-black transition-colors" style="border-top-color: var(--cos-primary);">
+            <div class="space-y-4">
+              <span class="text-xs font-mono font-bold text-gray-400">01 / TV</span>
+              <h3 class="text-xl font-bold text-black group-hover:underline">Télévision & Flux</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Émissions, captations, habillages visuels et régie multicaméra pour les canaux du réseau.</p>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-black inline-flex items-center gap-2">
+              Accéder au Zapping <i data-lucide="arrow-right" width="14" height="14"></i>
+            </span>
+          </a>
+
+          <a href="https://furnalitynetwork.github.io/Radio" class="group p-8 border border-gray-200 border-t-4 bg-white flex flex-col justify-between gap-6 hover:border-black transition-colors" style="border-top-color: var(--rdo-primary);">
+            <div class="space-y-4">
+              <span class="text-xs font-mono font-bold text-gray-400">02 / RADIO</span>
+              <h3 class="text-xl font-bold text-black group-hover:underline">Radio & Podcasts</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Formats audio, habillages sonores et programmation musicale continue pour Furnality Radio et le réseau RFF.</p>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-black inline-flex items-center gap-2">
+              Écouter la radio <i data-lucide="arrow-right" width="14" height="14"></i>
+            </span>
+          </a>
+
+          <a href="https://furnalitynetwork.github.io/OfficeBroadCaster" class="group p-8 border border-gray-200 border-t-4 bg-white flex flex-col justify-between gap-6 hover:border-black transition-colors" style="border-top-color: var(--d9-mvc-primary);">
+            <div class="space-y-4">
+              <span class="text-xs font-mono font-bold text-gray-400">03 / MÉDIAS</span>
+              <h3 class="text-xl font-bold text-black group-hover:underline">Création Numérique</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Séries vidéo, contenus sociaux, animation, archivage et formats courts pensés pour la distribution moderne.</p>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-black inline-flex items-center gap-2">
+              Découvrir Office BroadCaster <i data-lucide="arrow-right" width="14" height="14"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloc 4 : Furnality News (dynamique depuis Cloudflare D1) -->
+    <section id="actualites" class="section-space line-top py-16 px-6 md:px-12 border-t border-gray-200">
+      <div class="section-inner max-w-7xl mx-auto">
+        <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
+          <div>
+            <p class="eyebrow mb-2">03 — Rédaction</p>
+            <h2 class="text-3xl font-bold text-black">Furnality News.</h2>
+          </div>
+          <a href="https://furnalitynetwork.github.io/news" class="secondary-button">Toute l’actualité</a>
+        </div>
+
+        <div id="home-news-grid" class="grid gap-6 md:grid-cols-3">
+          <div class="p-6 border border-gray-200 bg-gray-50 space-y-3">
+            <div class="aspect-video bg-gray-200"></div>
+            <div class="h-4 bg-gray-200 w-24"></div>
+            <div class="h-6 bg-gray-200 w-full"></div>
+          </div>
+          <div class="p-6 border border-gray-200 bg-gray-50 space-y-3">
+            <div class="aspect-video bg-gray-200"></div>
+            <div class="h-4 bg-gray-200 w-24"></div>
+            <div class="h-6 bg-gray-200 w-full"></div>
+          </div>
+          <div class="p-6 border border-gray-200 bg-gray-50 space-y-3">
+            <div class="aspect-video bg-gray-200"></div>
+            <div class="h-4 bg-gray-200 w-24"></div>
+            <div class="h-6 bg-gray-200 w-full"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloc 5 : CRAN + Dernières informations du régulateur -->
+    <section id="cran" class="section-space line-top bg-gray-50 py-16 px-6 md:px-12 border-t border-gray-200">
+      <div class="section-inner max-w-7xl mx-auto">
+        <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
+          <div>
+            <p class="eyebrow mb-2">04 — Régulation & Éthique (CRAN)</p>
+            <h2 class="text-3xl font-bold text-black">Dernières informations du CRAN.</h2>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://furnalitynetwork.github.io/CRAN" class="secondary-button">Espace CRAN</a>
+            <a href="https://furnalitynetwork.github.io/CRAN/signaler.html" class="secondary-button">Signaler un contenu</a>
+          </div>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="p-6 border border-gray-200 bg-white space-y-3">
+            <div class="flex items-center justify-between text-[11px] font-mono text-gray-400 uppercase">
+              <span>Charte éditoriale</span>
+              <span>CRAN</span>
+            </div>
+            <h3 class="text-lg font-bold text-black leading-snug">Interdiction stricte des contenus générés par IA</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              Le CRAN rappelle l’interdiction formelle de diffuser des visuels, textes, voix ou musiques générés par intelligence artificielle sur l’ensemble des antennes Furnality.
+            </p>
           </article>
 
-          <article class="p-8 border border-gray-200 bg-white space-y-4">
-            <span class="text-xs font-mono font-bold text-gray-400">02 / RADIO</span>
-            <h3 class="text-xl font-bold text-black">Radio & Podcasts</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">Formats audio, habillages sonores et programmation musicale continue pour Furnality Radio.</p>
+          <article class="p-6 border border-gray-200 bg-white space-y-3">
+            <div class="flex items-center justify-between text-[11px] font-mono text-gray-400 uppercase">
+              <span>Diversité & Langue</span>
+              <span>CRAN</span>
+            </div>
+            <h3 class="text-lg font-bold text-black leading-snug">Suivi du quota de 50 % de création francophone</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              Contrôle régulier des grilles TV et radio afin de garantir au moins 50 % de productions, œuvres et programmes francophones sur le réseau.
+            </p>
           </article>
 
-          <article class="p-8 border border-gray-200 bg-white space-y-4">
-            <span class="text-xs font-mono font-bold text-gray-400">03 / MÉDIAS</span>
-            <h3 class="text-xl font-bold text-black">Création Numérique</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">Séries vidéo, contenus sociaux et formats courts pensés pour la distribution moderne.</p>
+          <article class="p-6 border border-gray-200 bg-white space-y-3">
+            <div class="flex items-center justify-between text-[11px] font-mono text-gray-400 uppercase">
+              <span>Transparence & Droits</span>
+              <span>CRAN</span>
+            </div>
+            <h3 class="text-lg font-bold text-black leading-snug">Attribution obligatoire des sources et archives</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              Chaque création, extrait ou archive diffusé doit mentionner clairement son auteur, son diffuseur d’origine ou ses crédits de référence.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Section : Contact / Office Broadcaster -->
+    <!-- Bloc 6 : Contact / Office BroadCaster (avec logo OBC) -->
     <section id="contact" class="section-space line-top py-16 px-6 md:px-12 border-t border-gray-200">
       <div class="section-inner max-w-7xl mx-auto">
-        <div class="feature-panel p-8 bg-gray-50 border border-gray-200">
-          <div class="max-w-2xl">
-            <p class="eyebrow mb-3">Office BroadCaster</p>
-            <h2 class="text-3xl font-bold text-black">Prendre l'antenne sur le réseau.</h2>
-            <p class="mt-4 text-gray-600 leading-relaxed">
-              Projets de diffusion, partenariats de flux ou propositions de contenus : contactez la régie pour rejoindre l'antenne.
-            </p>
-            <a href="https://furnalitynetwork.github.io/OfficeBroadCaster" class="primary-button mt-6 inline-block">
-              Contacter la régie
-            </a>
+        <div class="feature-panel p-8 md:p-10 bg-gray-50 border border-gray-200 border-l-4" style="border-left-color: var(--accent-black);">
+          <div class="grid gap-8 lg:grid-cols-12 items-center">
+            <div class="lg:col-span-8">
+              <div class="flex items-center gap-4 mb-4">
+                <img
+                  src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/OBC%20-%20Office%20BroadCaster.svg"
+                  alt="Logo Office BroadCaster"
+                  class="h-10 w-auto object-contain"
+                  onerror="this.style.display='none'; document.getElementById('obc-logo-fallback').classList.remove('hidden');"
+                >
+                <span id="obc-logo-fallback" class="hidden px-3 py-1 bg-black text-white text-xs font-bold tracking-widest uppercase">OBC</span>
+                <p class="eyebrow">Office BroadCaster</p>
+              </div>
+              <h2 class="text-3xl font-bold text-black">Prendre l'antenne sur le réseau.</h2>
+              <p class="mt-4 text-gray-600 leading-relaxed max-w-2xl">
+                Projets de diffusion, partenariats de flux ou propositions de contenus : contactez la régie pour rejoindre l'antenne.
+              </p>
+            </div>
+
+            <div class="lg:col-span-4 lg:text-right">
+              <a href="https://furnalitynetwork.github.io/OfficeBroadCaster" class="primary-button inline-flex">
+                Contacter la régie
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -155,11 +333,11 @@
   </main>
 
   <!-- Pied de page officiel -->
-  <footer class="bg-white border-t border-gray-200 py-12 px-6">
+  <footer class="bg-white border-t border-gray-200 py-12 px-6 md:px-12">
     <div class="max-w-7xl mx-auto">
-      
+
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-200 text-xs">
-        
+
         <!-- Colonne 1 : Identité & Drapeau NC -->
         <div class="space-y-3">
           <p class="text-base font-bold tracking-widest text-black uppercase">FURNALITY</p>
@@ -223,6 +401,114 @@
 
     </div>
   </footer>
+
+  <!-- Script dynamique de la page d'accueil (Horloge Nouméa + Furnality News D1) -->
+  <script>
+    (function () {
+      const API = (typeof CLOUDFLARE_WORKER_URL !== 'undefined')
+        ? CLOUDFLARE_WORKER_URL
+        : 'https://furnality-api.darkeoftime.workers.dev';
+      const NEWS_ASSETS = 'https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/NEWS/';
+      const RUB_COLORS = {
+        rouge: '#ff1d25', rose: '#ff007f', orange: '#ff6600', jaune: '#fbc531',
+        bleu: '#0055ff', vert: '#10d050', mauve: '#7f00ff', marron: '#944613'
+      };
+
+      const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      const isFilled = v => v !== null && v !== undefined && String(v).trim() !== '' && String(v).trim().toUpperCase() !== 'NULL';
+
+      // Horloge locale Nouméa (UTC+11)
+      const clockEl = document.getElementById('home-noumea-clock');
+      if (clockEl) {
+        const updateClock = () => {
+          try {
+            const now = new Date();
+            const t = now.toLocaleTimeString('fr-FR', { timeZone: 'Pacific/Noumea', hour: '2-digit', minute: '2-digit' });
+            clockEl.textContent = `Nouméa · ${t}`;
+          } catch (e) {
+            clockEl.textContent = 'Nouméa · NC';
+          }
+        };
+        updateClock();
+        setInterval(updateClock, 15000);
+      }
+
+      // Chargement des 3 derniers articles depuis Cloudflare D1
+      async function loadHomeNews() {
+        const grid = document.getElementById('home-news-grid');
+        const heroTitle = document.getElementById('hero-news-title');
+        const heroMeta = document.getElementById('hero-news-meta');
+        const heroLink = document.getElementById('hero-news-link');
+
+        try {
+          const [rr, ar] = await Promise.all([
+            fetch(API + '/api/news/rubriques').then(r => r.json()),
+            fetch(API + '/api/news/articles').then(r => r.json())
+          ]);
+          const rubs = Array.isArray(rr) ? rr : [];
+          const articles = (Array.isArray(ar) ? ar : [])
+            .sort((a, b) => String(b.date_publication || '').localeCompare(String(a.date_publication || '')) || Number(b.id) - Number(a.id));
+
+          if (!articles.length) {
+            if (heroTitle) heroTitle.textContent = 'Retrouvez toute l’actualité du réseau sur Furnality News.';
+            if (grid) grid.innerHTML = '<div class="md:col-span-3 p-8 border border-gray-200 bg-gray-50 text-sm text-gray-500">Aucun article publié pour le moment.</div>';
+            return;
+          }
+
+          const featured = articles.find(a => Number(a.a_la_une) === 1) || articles[0];
+          const fRub = rubs.find(r => String(r.id) === String(featured.rubrique_id));
+          if (heroTitle) heroTitle.textContent = featured.titre;
+          if (heroLink) heroLink.href = `https://furnalitynetwork.github.io/news/article.html?id=${encodeURIComponent(featured.id)}`;
+          if (heroMeta) {
+            const dt = featured.date_publication ? new Date(String(featured.date_publication).replace(' ', 'T')).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+            heroMeta.textContent = [fRub ? fRub.nom : 'Furnality News', dt].filter(Boolean).join(' · ');
+          }
+
+          if (grid) {
+            grid.innerHTML = articles.slice(0, 3).map(a => {
+              const r = rubs.find(x => String(x.id) === String(a.rubrique_id));
+              const col = RUB_COLORS[String(r?.couleur || '').toLowerCase()] || '#ff1d25';
+              const rawImg = isFilled(a.image) ? String(a.image).trim() : '';
+              const imgSrc = rawImg
+                ? (/^(https?:\/\/|\/|\.\/)/i.test(rawImg) ? rawImg : NEWS_ASSETS + (rawImg.includes('%') ? rawImg : encodeURI(rawImg)))
+                : '';
+              const dt = a.date_publication
+                ? new Date(String(a.date_publication).replace(' ', 'T')).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' })
+                : '';
+
+              return `
+                <a href="https://furnalitynetwork.github.io/news/article.html?id=${encodeURIComponent(a.id)}" class="group border border-gray-200 bg-white flex flex-col justify-between hover:border-black transition-colors">
+                  <div>
+                    <div class="relative aspect-video bg-gray-900 overflow-hidden border-b border-gray-200">
+                      ${imgSrc
+                        ? `<img src="${esc(imgSrc)}" alt="" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.parentNode.innerHTML='<div class=\\'w-full h-full flex items-center justify-center text-xs font-bold tracking-widest uppercase text-white/80\\'>${esc(r ? r.nom : 'Furnality News')}</div>'">`
+                        : `<div class="w-full h-full flex items-center justify-center text-xs font-bold tracking-widest uppercase text-white/80">${esc(r ? r.nom : 'Furnality News')}</div>`}
+                      <span class="absolute bottom-0 left-0 w-full h-1" style="background: ${col};"></span>
+                    </div>
+                    <div class="p-6 space-y-2.5">
+                      <p class="text-[11px] font-bold uppercase tracking-wider flex items-center gap-2" style="color: ${col};">
+                        <span class="inline-block w-2 h-2" style="background: ${col};"></span>
+                        ${esc(r ? r.nom : 'Actualité')}
+                      </p>
+                      <h3 class="text-lg font-bold text-black leading-snug group-hover:underline">${esc(a.titre)}</h3>
+                      ${isFilled(a.chapo) ? `<p class="text-xs text-gray-600 leading-relaxed line-clamp-3">${esc(a.chapo)}</p>` : ''}
+                    </div>
+                  </div>
+                  <div class="px-6 pb-5 pt-2 text-[11px] text-gray-400 font-medium">
+                    ${esc(dt)}
+                  </div>
+                </a>`;
+            }).join('');
+          }
+        } catch (err) {
+          console.error('Home News API error:', err);
+          if (heroTitle) heroTitle.textContent = 'Accéder aux éditions de Furnality News';
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', loadHomeNews);
+    })();
+  </script>
 
 </body>
 </html>
