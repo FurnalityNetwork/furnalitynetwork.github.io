@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furnality Radio & RFF — Réseau Radiophonique Francophone</title>
+  <meta name="description" content="Furnality Radio et le réseau Radio Francophone de Furnality (RFF) : direct, antennes régionales, podcasts et replays.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+  <link rel="icon" type="image/png" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20Furnality.png">
+  <link rel="apple-touch-icon" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20Furnality.png">
+  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/global.css?v=20">
+  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/radio.css?v=1">
+
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/global.js?v=1"></script>
+</head>
+<body class="bg-white text-gray-900 antialiased min-h-screen flex flex-col justify-between pb-24">
+
+  <!-- Navigation principale -->
+  <header class="top-nav fixed top-0 z-50 w-full px-6 py-4 md:px-12 bg-white/95 backdrop-blur-md border-b border-gray-200">
+    <nav class="relative mx-auto flex max-w-7xl items-center justify-between gap-6" aria-label="Navigation principale">
+
+      <div class="logo-box flex items-center gap-3 select-none flex-shrink-0">
+        <a href="https://furnalitynetwork.github.io" class="flex-shrink-0" title="Retour à l'accueil Furnality">
+          <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/Furnality%20Logo.svg" alt="Furnality" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
+        </a>
+        <span class="logo-separator text-xs text-gray-300">|</span>
+        <a href="https://furnalitynetwork.github.io/Radio" class="flex-shrink-0 flex items-center gap-2" title="Furnality Radio">
+          <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/RRF/Furnality%20Radio%20-%20Radio.svg" alt="Furnality Radio" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
+        </a>
+      </div>
+
+      <div class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="https://furnalitynetwork.github.io/Radio" class="nav-link text-xs font-bold uppercase tracking-wider text-black">ACCUEIL RADIO</a>
+        <a href="https://furnalitynetwork.github.io/Radio/antennes.html" class="nav-link text-xs font-bold uppercase tracking-wider text-gray-600 hover:text-black">CARTE & ANTENNES</a>
+        <a href="https://furnalitynetwork.github.io/Radio/programmes.html" class="nav-link text-xs font-bold uppercase tracking-wider text-gray-600 hover:text-black">REPLAY & STREAMING</a>
+        <a href="https://furnalitynetwork.github.io/Radio/grille.html" class="nav-link text-xs font-bold uppercase tracking-wider text-gray-600 hover:text-black">GRILLE</a>
+        <a href="https://furnalitynetwork.github.io/Zapping" class="nav-link text-xs font-bold uppercase tracking-wider text-gray-600 hover:text-black">ZAPPING</a>
+      </div>
+
+      <div class="flex items-center gap-3 flex-shrink-0">
+        <button id="hero-play-live" type="button" class="primary-button hidden lg:inline-flex items-center gap-2" style="background-color:#004dff;">
+          <i data-lucide="radio" width="14" height="14"></i>
+          <span>Écouter le direct</span>
+        </button>
+        <button id="menu-button" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-gray-200 lg:hidden" aria-label="Ouvrir le menu">
+          <i data-lucide="menu" width="18" height="18"></i>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="mobile-menu hidden absolute top-full left-0 right-0 flex-col gap-4 p-6 bg-white border-b border-gray-200 shadow-lg lg:hidden">
+        <a href="https://furnalitynetwork.github.io/Radio" class="nav-link">ACCUEIL RADIO</a>
+        <a href="https://furnalitynetwork.github.io/Radio/antennes.html" class="nav-link">CARTE & ANTENNES</a>
+        <a href="https://furnalitynetwork.github.io/Radio/programmes.html" class="nav-link">REPLAY & STREAMING</a>
+        <a href="https://furnalitynetwork.github.io/Radio/grille.html" class="nav-link">GRILLE</a>
+        <a href="https://furnalitynetwork.github.io/Zapping" class="nav-link">ZAPPING</a>
+      </div>
+    </nav>
+    <div class="h-0.5 w-full radio-accent-bar absolute bottom-0 left-0"></div>
+  </header>
+
+  <main class="pt-20 flex-grow">
+
+    <!-- Bloc 1 : Présentation Groupe & Réseau RFF -->
+    <section class="border-b border-gray-200 px-6 py-14 md:py-20 md:px-12">
+      <div class="max-w-7xl mx-auto grid gap-10 lg:grid-cols-12 items-center">
+
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-white" style="background-color:#5a189a;">
+            <span>Pôle Radiophonique · Groupe & RFF</span>
+          </div>
+
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-black leading-tight">
+            Furnality Radio & le réseau RFF.
+          </h1>
+
+          <p class="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl">
+            Un pôle audio francophone et indépendant réunissant la station nationale/internationale <strong>Furnality Radio</strong>, les antennes régionales de la <strong>Radio Francophone de Furnality (RFF)</strong>[cite: 18], les podcasts et les flux continus.
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="https://furnalitynetwork.github.io/Radio/antennes.html" class="primary-button" style="background-color:#004dff;">
+              Carte & liste des radios
+            </a>
+            <a href="https://furnalitynetwork.github.io/Radio/programmes.html" class="secondary-button">
+              Replay & streaming
+            </a>
+          </div>
+        </div>
+
+        <!-- Panneau identité visuelle Groupe + RFF -->
+        <div class="lg:col-span-5 border border-gray-200 bg-gray-50 p-8 space-y-6">
+          <div class="flex items-center justify-between border-b border-gray-200 pb-5">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/RRF/Furnality%20Radio.svg" alt="Furnality Radio Groupe" class="h-10 w-auto object-contain" onerror="this.style.display='none'">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/RFF/RFF---ICN.svg" alt="Icône RFF" class="h-9 w-auto object-contain" onerror="this.style.display='none'">
+          </div>
+
+          <div class="bg-white border border-gray-200 p-5 flex items-center justify-center min-h-[110px]">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/RFF/RFF---Full.svg" alt="Logo complet RFF" class="max-h-16 w-auto object-contain" onerror="this.style.display='none'">
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 pt-1">
+            <div class="border border-gray-200 bg-white p-4">
+              <p class="text-xl font-bold" style="color:#004dff;">20</p>
+              <p class="text-[11px] font-mono uppercase text-gray-500 mt-1">Stations & antennes RFF[cite: 18]</p>
+            </div>
+            <div class="border border-gray-200 bg-white p-4">
+              <p class="text-xl font-bold" style="color:#5a189a;">24/7</p>
+              <p class="text-[11px] font-mono uppercase text-gray-500 mt-1">Flux & replay francophone</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bloc 2 : Les 4 pages de l'espace Radio -->
+    <section class="py-16 px-6 md:px-12 bg-gray-50/60 border-b border-gray-200">
+      <div class="max-w-7xl mx-auto">
+        <p class="eyebrow mb-2" style="color:#004dff;">01 — Architecture de l'espace</p>
+        <h2 class="text-3xl font-bold text-black mb-10">Explorer l'univers Radio.</h2>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <a href="https://furnalitynetwork.github.io/Radio/antennes.html" class="radio-card p-6 flex flex-col justify-between gap-6">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-bold text-gray-400">01 / CARTE</span>
+                <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/RFF/RFF---ICN.svg" alt="" class="h-5 w-5 object-contain" onerror="this.style.display='none'">
+              </div>
+              <h3 class="text-lg font-bold text-black">Map & Liste des Radios</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">Parcourez la carte interactive et la liste complète des stations RFF et régionales.</p>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider" style="color:#004dff;">Ouvrir la carte →</span>
+          </a>
+
+          <a href="https://furnalitynetwork.github.io/Radio/programmes.html" class="radio-card p-6 flex flex-col justify-between gap-6">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-bold text-gray-400">02 / REPLAY</span>
+                <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/RFF/RFF---Tag.svg" alt="" class="h-5 w-auto object-contain" onerror="this.style.display='none'">
+              </div>
+              <h3 class="text-lg font-bold text-black">Contenus & Streaming</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">Écoutez les émissions en replay, podcasts et flux audio à la demande.</p>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider" style="color:#5a189a;">Voir les contenus →</span>
+          </a>
+
+          <a href="https://furnalitynetwork.github.io/Radio/grille.html" class="radio-card p-6 flex flex-col justify-between gap-6">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-bold text-gray-400">03 / GRILLE</span>
+                <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/RFF/RFF---BUG.svg" alt="" class="h-5 w-auto object-contain" onerror="this.style.display='none'">
+              </div>
+              <h3 class="text-lg font-bold text-black">Grille & Rendez-vous</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">Consultez les créneaux d'antenne, formats musicaux et éditions spéciales.</p>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider" style="color:#004dff;">Consulter la grille →</span>
+          </a>
+
+          <div class="radio-card p-6 flex flex-col justify-between gap-6 bg-white">
+            <div class="space-y-3">
+              <span class="text-xs font-mono font-bold text-gray-400">04 / GROUPE</span>
+              <h3 class="text-lg font-bold text-black">Furnality Radio</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">Station principale et coordination éditoriale du réseau RFF[cite: 18].</p>
+            </div>
+            <button type="button" id="card-play-main" class="text-left text-xs font-bold uppercase tracking-wider" style="color:#5a189a;">
+              Lancer l'antenne principale →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloc 3 : Aperçu des stations RFF -->
+    <section class="py-16 px-6 md:px-12">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-wrap items-end justify-between gap-4 border-b border-gray-200 pb-5 mb-8">
+          <div>
+            <p class="eyebrow mb-1" style="color:#5a189a;">02 — Réseau RFF</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-black">Antennes & régions à l'écoute.</h2>
+          </div>
+          <a href="https://furnalitynetwork.github.io/Radio/antennes.html" class="secondary-button">Toutes les antennes</a>
+        </div>
+
+        <div id="home-stations-preview" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lecteur audio persistant -->
+  <div id="radio-dock" class="fixed bottom-0 left-0 right-0 z-40 bg-black text-white border-t-2 px-4 py-3 md:px-12" style="border-top-color:#004dff;">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3 min-w-0">
+        <img id="dock-logo" src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/RFF/Furnality%20Radio%20-%20Radio%20Alt.svg" alt="" class="h-7 w-auto object-contain flex-shrink-0" onerror="this.style.display='none'">
+        <div class="min-w-0">
+          <p id="dock-station-name" class="text-xs font-bold uppercase tracking-wider truncate">Furnality Radio — Direct</p>
+          <p id="dock-status" class="text-[11px] text-gray-400 truncate">Prêt à l'écoute</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="dock-toggle-btn" type="button" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-white" style="background-color:#004dff;">
+          Lecture / Pause
+        </button>
+      </div>
+      <audio id="radio-audio-element" preload="none" class="hidden"></audio>
+    </div>
+  </div>
+
+  <!-- Pied de page -->
+  <footer class="bg-white border-t border-gray-200 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-200 text-xs">
+        <div class="space-y-3">
+          <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/RFF/Furnality%20Radio%20Alt.svg" alt="Furnality Radio" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
+          <p class="text-gray-500 leading-relaxed">Du Son, de l'Image, une Famille. Pôle Radio & RFF[cite: 18].</p>
+          <div class="pt-2 flex flex-col items-start gap-1">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FLAG/DCNC.svg" alt="Drapeau Commun NC" class="h-6 w-auto object-contain mb-1" />
+            <p class="text-xs font-bold text-black leading-tight">Studio Nouméa, Nouvelle-Calédonie</p>
+          </div>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Radio & RFF</h4>
+          <nav class="flex flex-col gap-2">
+            <a href="https://furnalitynetwork.github.io/Radio" class="footer-link">Accueil Radio</a>
+            <a href="https://furnalitynetwork.github.io/Radio/antennes.html" class="footer-link">Carte & Liste des Radios</a>
+            <a href="https://furnalitynetwork.github.io/Radio/programmes.html" class="footer-link">Contenus (Replay / Streaming)</a>
+            <a href="https://furnalitynetwork.github.io/Radio/grille.html" class="footer-link">Grille des programmes</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Furnality</h4>
+          <nav id="footer-furnality" class="flex flex-col gap-2"></nav>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Office Broadcaster</h4>
+          <nav id="footer-office" class="flex flex-col gap-2"></nav>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Informations & Légal</h4>
+          <nav class="flex flex-col gap-2">
+            <a href="/legacy/mentions-legales.html" class="footer-link">Mentions Légales</a>
+            <a href="/legacy/cgu-conditions.html" class="footer-link">CGU & Conditions</a>
+            <a href="/legacy/charte-antenne.html" class="footer-link">Charte des Antennes</a>
+            <a href="/legacy/fondateurs-contributeurs.html" class="footer-link">Fondateurs & Crédits</a>
+          </nav>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <p>&copy; 2018 - 2027 Furnality | Tous droits réservés.</p>
+        <span class="font-semibold text-gray-700">Furnality Radio · RFF</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/radio.js?v=1"></script>
+</body>
+</html>
