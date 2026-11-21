@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Furnality Radio — la radio de Furnality et de la francophonie</title>
+<meta name="description" content="Furnality Radio et la RFF : carte des antennes, streaming, replays et programmes.">
+<meta name="theme-color" content="#5a189a">
+<link rel="icon" type="image/png" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20Radio.png">
+<link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/radio.css?v=1">
+</head>
+<body data-page="home">
+<div class="site-top">
+  <div class="topbar"><div class="wrap"><span>Furnality Radio · le réseau radio du groupe Furnality</span>
+    <a href="https://furnalitynetwork.github.io"><svg class="icon"><use href="#i-back"/></svg> Retour à Furnality</a></div></div>
+  <header class="site-header"><div class="wrap">
+    <a class="brand" href="index.html" aria-label="Furnality Radio — accueil"><img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/Furnality%20Radio.svg" alt="Furnality Radio"></a>
+    <nav class="nav" aria-label="Navigation principale"><a href="index.html" aria-current="page">Accueil</a><a href="radios.html">Radios</a><a href="contenus.html">Contenus</a><a href="programmes.html">Programmes</a><a href="reseau.html">Le réseau</a></nav>
+    <div class="header-actions"><button class="btn btn--grad btn--sm" data-play="FURNALITY"><svg class="icon icon--fill"><use href="#i-play"/></svg> Écouter</button>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><svg class="icon"><use href="#i-menu"/></svg></button></div>
+    <div class="mobile-menu" id="mobile-menu"><a href="index.html" aria-current="page">Accueil</a><a href="radios.html">Radios</a><a href="contenus.html">Contenus</a><a href="programmes.html">Programmes</a><a href="reseau.html">Le réseau</a><a href="https://furnalitynetwork.github.io">← Retour à Furnality</a></div>
+  </div></header>
+  <div class="accent-bar"></div>
+</div>
+<main id="contenu">
+
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Furnality Radio · RFF</span>
+    <h1 class="h1">Une radio. Vingt et une antennes. Toute la francophonie.</h1>
+    <p class="lead">Furnality Radio, la radio généraliste du groupe, et la RFF — Radio Francophones de Furnality : des antennes locales de Nouméa à Montréal, de Paris à Antananarivo.</p>
+    <div class="hero-cta"><a class="btn btn--white" href="radios.html"><svg class="icon"><use href="#i-map"/></svg> Explorer la carte</a>
+      <a class="btn btn--line-white" href="contenus.html">Écouter &amp; réécouter</a></div>
+  </div>
+  <div class="onair" id="onair">
+    <div class="onair-top"><small>Furnality Radio</small><span id="onair-status"></span></div>
+    <div class="onair-body">
+      <img class="onair-logo" src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/Furnality%20Radio.svg" alt="Furnality Radio">
+      <div class="onair-now" id="onair-now">Programmation<strong>Ouverture prochaine</strong></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+        <button class="btn btn--grad" data-play="FURNALITY"><svg class="icon icon--fill"><use href="#i-play"/></svg> Écouter en direct</button>
+        <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+<div class="statbar"><div class="wrap" id="home-stats"></div></div>
+
+<section class="section"><div class="wrap">
+  <div class="section-head"><div><span class="eyebrow">Deux marques</span><h2 class="h2">Furnality Radio et la RFF, à ne pas confondre</h2></div></div>
+  <div class="duo">
+    <article class="brandcard brandcard--grad"><div class="brandcard-logo"><img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/Furnality%20Radio.svg" alt="Furnality Radio"></div>
+      <div class="brandcard-body"><h3>Furnality Radio</h3><p>La radio généraliste, nationale et internationale : généraliste, News et SoundofSkully. Propriétaire de la RFF.</p>
+      <a class="btn btn--white" href="radio.html?r=FURNALITY">Découvrir Furnality Radio</a></div></article>
+    <article class="brandcard"><div class="brandcard-logo"><img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/RFF/RFF---Full.svg" alt="RFF"></div>
+      <div class="brandcard-body"><h3>RFF — Radio Francophones de Furnality</h3><p>Le réseau de radios régionales : des antennes locales, une identité par territoire, regroupées en six pôles.</p>
+      <a class="btn" href="reseau.html">Comprendre le réseau</a></div></article>
+  </div>
+</div></section>
+
+<section class="section section--tint"><div class="wrap">
+  <div class="section-head"><div><span class="eyebrow">Couverture</span><h2 class="h2">Les antennes dans le monde</h2></div><a class="link-arrow" href="radios.html">Carte complète <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+  <div class="mapbox" style="grid-template-columns:minmax(0,1fr)"><div class="map-stage map-stage--home" id="home-map">
+    <div class="map-legend"><span><i></i>Antenne RFF</span></div></div></div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="section-head"><div><span class="eyebrow">Six pôles</span><h2 class="h2">Un réseau organisé par régions</h2></div><a class="link-arrow" href="radios.html#liste">Toute la liste <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+  <div class="poles" id="home-poles"></div>
+</div></section>
+
+<section class="section section--tint"><div class="wrap">
+  <div class="section-head"><div><span class="eyebrow">À réécouter</span><h2 class="h2">Derniers replays</h2></div><a class="link-arrow" href="contenus.html#replays">Tous les replays <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+  <div class="cards" id="home-latest"></div>
+</div></section>
+
+</main>
+<footer class="footer">
+  <div class="accent-bar"></div>
+  <div class="wrap footer-grid">
+    <div><a class="footer-logo" href="index.html"><img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/Furnality%20Radio.svg" alt="Furnality Radio"></a>
+      <p>Furnality Radio, la radio généraliste du groupe, et la RFF — Radio Francophones de Furnality : 21 antennes locales dans toute la francophonie.</p></div>
+    <div><h4>Radio</h4><ul><li><a href="radios.html">Carte et liste des radios</a></li><li><a href="contenus.html">Streaming</a></li><li><a href="contenus.html#replays">Replays</a></li><li><a href="programmes.html">Programmes</a></li><li><a href="reseau.html">Le réseau RFF</a></li></ul></div>
+    <div><h4>Furnality</h4><ul><li><a href="https://furnalitynetwork.github.io">Accueil Furnality</a></li><li><a href="https://furnalitynetwork.github.io/Zapping">Zapping</a></li><li><a href="https://furnalitynetwork.github.io/OfficeBroadCaster">Office Broadcaster</a></li><li><a href="https://furnalitynetwork.github.io/news">Furnality News</a></li><li><a href="https://furnalitynetwork.github.io/CRAN">CRAN</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:furnality@gmail.com">furnality@gmail.com</a></li><li><a href="https://furnalitynetwork.github.io/legacy/mentions-legales.html">Mentions légales</a></li><li><a href="https://furnalitynetwork.github.io/legacy/confidentialite-donnees.html">Confidentialité</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div class="wrap"><span>© Furnality Radio — Furnality Network</span><span>Les radios sont placées sous la régulation du CRAN</span></div></div>
+</footer>
+<script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/radio-map.js?v=1"></script>
+<script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/radio.js?v=1"></script>
+</body>
+</html>
