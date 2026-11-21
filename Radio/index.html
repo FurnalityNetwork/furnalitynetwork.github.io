@@ -7,7 +7,7 @@
   <meta name="description" content="Portail officiel de Furnality Radio et du réseau d’antennes territoriales francophones RFF.">
   <link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20Radio.svg">
   <link rel="apple-touch-icon" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20Radio.svg">
-  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/radio.css?v=2">
+  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/radio.css?v=4">
 </head>
 <body data-page="home">
 
@@ -55,7 +55,6 @@
   </header>
 
   <main>
-    <!-- Héros -->
     <section class="hero">
       <div class="wrap">
         <div>
@@ -63,10 +62,10 @@
           <h1 class="h1">La radio généraliste et les antennes de la francophonie.</h1>
           <p class="lead">Écoutez Furnality Radio en continu et explorez les antennes territoriales du réseau RFF déployées sur six pôles internationaux.</p>
           <div class="hero-cta">
-            <button class="btn btn--white" data-play="FURNALITY">
+            <button class="btn btn--grad" data-play="FURNALITY">
               <span data-ic="play" data-fill></span> Écouter le direct
             </button>
-            <a class="btn btn--line-white" href="radios.html">
+            <a class="btn" href="radios.html">
               <span data-ic="map"></span> Explorer les antennes
             </a>
           </div>
@@ -82,7 +81,7 @@
             <div class="onair-now" id="onair-now">
               Programmation<strong>Chargement…</strong>
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;border-top:1px solid var(--line)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;border-top:1px solid var(--line)">
               <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
               <button class="btn btn--grad btn--sm" data-play="FURNALITY">
                 <span data-ic="play" data-fill></span> Lancer l’écoute
@@ -93,7 +92,6 @@
       </div>
     </section>
 
-    <!-- Chiffres clés -->
     <section class="statbar" aria-label="Chiffres clés">
       <div class="wrap" id="home-stats">
         <div class="stat"><b>1 / 21</b><span>Antennes RFF ouvertes</span></div>
@@ -103,7 +101,6 @@
       </div>
     </section>
 
-    <!-- Les deux entités -->
     <section class="section">
       <div class="wrap">
         <div class="section-head">
@@ -113,35 +110,38 @@
           </div>
         </div>
         <div class="duo">
-          <article class="brandcard brandcard--grad">
+          <article class="brandcard">
             <div class="brandcard-logo">
-              <img class="logo-svg" src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/Furnality%20Radio%20Alt.svg" alt="Furnality Radio" draggable="false">
+              <img class="logo-svg" src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/Furnality%20Radio.svg" alt="Furnality Radio" draggable="false">
             </div>
             <div class="brandcard-body">
-              <h3>Furnality Radio <small style="display:block;font-size:.75rem;opacity:.85;font-weight:700;text-transform:uppercase;letter-spacing:.08em">Nationale &amp; Internationale</small></h3>
+              <span class="brandcard-kicker">Nationale &amp; Internationale</span>
+              <h3>Furnality Radio</h3>
               <p>La radio généraliste nationale et internationale du groupe Furnality : programmes, News, SoundofSkully et pilotage du réseau RFF.</p>
-              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:auto">
-                <a class="btn btn--white" href="radio.html?r=FURNALITY">Fiche de la radio</a>
-                <button class="btn btn--line-white" data-play="FURNALITY"><span data-ic="play" data-fill></span> Écouter</button>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:8px">
+                <button class="btn btn--grad" data-play="FURNALITY"><span data-ic="play" data-fill></span> Écouter</button>
+                <a class="btn" href="radio.html?r=FURNALITY">Fiche de la radio</a>
               </div>
             </div>
           </article>
 
-          <article class="brandcard">
+          <article class="brandcard brandcard--violet">
             <div class="brandcard-logo">
               <img class="logo-svg" src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/RFF/RFF---Full.svg" alt="RFF — Radio Francophones de Furnality" draggable="false">
             </div>
             <div class="brandcard-body">
-              <h3>RFF — Radio Francophones de Furnality <small style="display:block;font-size:.75rem;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.08em">Réseau régional</small></h3>
+              <span class="brandcard-kicker">Réseau régional</span>
+              <h3>RFF — Radio Francophones de Furnality</h3>
               <p>Les antennes locales par territoire, regroupées en six pôles et ouvertes progressivement à travers la francophonie.</p>
-              <a class="btn" href="reseau.html">Comprendre le réseau</a>
+              <div style="margin-top:auto;padding-top:8px">
+                <a class="btn" href="reseau.html">Comprendre le réseau</a>
+              </div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Les six pôles régionaux -->
     <section class="section section--tint">
       <div class="wrap">
         <div class="section-head">
@@ -155,7 +155,6 @@
       </div>
     </section>
 
-    <!-- Carte du réseau -->
     <section class="section">
       <div class="wrap">
         <div class="section-head">
@@ -175,7 +174,6 @@
       </div>
     </section>
 
-    <!-- Derniers replays et podcasts -->
     <section class="section section--tint">
       <div class="wrap">
         <div class="section-head">
@@ -195,7 +193,7 @@
     <div class="wrap footer-grid">
       <div>
         <a class="footer-logo" href="index.html" aria-label="Furnality Radio">
-          <img class="logo-svg" src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/Furnality%20Radio%20Alt.svg" alt="Furnality Radio" draggable="false">
+          <img class="logo-svg" src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/RADIO/Furnality%20Radio.svg" alt="Furnality Radio" draggable="false">
         </a>
         <p>Pôle radiophonique du groupe Furnality : antenne généraliste Furnality Radio et réseau territorial des Radio Francophones de Furnality (RFF).</p>
       </div>
@@ -224,7 +222,8 @@
         <h4>Groupe</h4>
         <ul>
           <li><a href="https://furnalitynetwork.github.io">Portail Furnality</a></li>
-          <li><a href="reseau.html">Charte &amp; réseau RFF</a></li>
+          <li><a href="https://furnalitynetwork.github.io/CRAN">CRAN</a></li>
+          <li><a href="mailto:furnality@gmail.com">furnality@gmail.com</a></li>
         </ul>
       </div>
     </div>
@@ -237,7 +236,7 @@
     </div>
   </footer>
 
-  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/radio-map.js?v=2"></script>
-  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/radio.js?v=2"></script>
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/radio-map.js?v=4"></script>
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/radio.js?v=4"></script>
 </body>
 </html>
