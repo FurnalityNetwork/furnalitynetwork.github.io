@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fiche radio — Furnality Radio</title>
-<meta name="description" content="Fiche d’une antenne Furnality Radio / RFF.">
+<title>Radios — Furnality Radio</title>
+<meta name="description" content="Carte et liste des radios de la RFF et de Furnality Radio.">
 <meta name="theme-color" content="#5a189a">
 <link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20Radio.svg">
 <link rel="apple-touch-icon" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20Radio.svg">
 <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Asset/css/radio.css?v=2">
 </head>
-<body data-page="station">
+<body data-page="radios">
 <div class="site-top">
   <div class="topbar"><div class="wrap"><span>Furnality Radio · le réseau radio du groupe Furnality</span>
     <a href="https://furnalitynetwork.github.io"><svg class="icon"><use href="#i-back"/></svg> Retour à Furnality</a></div></div>
@@ -24,7 +24,20 @@
   <div class="accent-bar"></div>
 </div>
 <main id="contenu">
-<div id="station-root"></div>
+<section class="page-head"><div class="wrap"><span class="eyebrow">Furnality Radio · RFF</span><h1 class="h1">Les radios</h1><p>Retrouvez chaque antenne de la RFF sur la carte ou dans la liste, par pôle et par zone de diffusion.</p></div></section>
+<section class="section" style="padding-top:44px"><div class="wrap">
+  <div class="toolbar">
+    <div class="tabs" role="tablist"><button class="is-on" data-view="map"><svg class="icon"><use href="#i-map"/></svg> Carte</button><button data-view="list"><svg class="icon"><use href="#i-list"/></svg> Liste</button></div>
+    <label class="field"><svg class="icon"><use href="#i-search"/></svg><input id="q" type="search" placeholder="Rechercher une antenne, une zone…" aria-label="Rechercher"></label>
+  </div>
+  <div id="view-map"><div class="mapbox">
+    <div class="map-stage" id="map-stage"><div class="map-ctrl" id="map-ctrl"></div>
+      <div class="map-legend"><span><i></i>Antenne RFF</span></div></div>
+    <div class="panel" id="panel"></div>
+  </div></div>
+  <div id="view-list" hidden><div id="list-grid"></div></div>
+</div></section>
+
 </main>
 <footer class="footer">
   <div class="accent-bar"></div>
