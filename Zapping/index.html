@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lecture — Zapping by Furnality</title>
+  <title>Zapping — Furnality Network</title>
 
   <!-- Tailwind CSS & Lucide Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -39,9 +39,10 @@
       <div class="hidden lg:flex items-center gap-6 xl:gap-8">
         <a href="https://furnalitynetwork.github.io" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-gray-600 hover:text-black">ACCUEIL</a>
         <a href="https://furnalitynetwork.github.io/Zapping" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-black">ZAPPING</a>
+        <a href="https://furnalitynetwork.github.io/Radio" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-gray-600 hover:text-black">RADIO</a>
+        <a href="https://furnalitynetwork.github.io/OfficeBroadCaster" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-gray-600 hover:text-black">OFFICE BROADCASTER</a>
         <a href="https://furnalitynetwork.github.io/news" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-gray-600 hover:text-black">NEWS</a>
-        <a href="https://furnalitynetwork.github.io/OfficeBroadCaster" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-gray-600 hover:text-black inline-flex items-center gap-1" title="Site externe à Furnality">OFFICE BROADCASTER <i data-lucide="arrow-up-right" width="12" height="12" aria-hidden="true"></i></a>
-        <a href="https://furnalitynetwork.github.io/CRAN" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-gray-600 hover:text-black inline-flex items-center gap-1" title="Site externe à Furnality">CRAN <i data-lucide="arrow-up-right" width="12" height="12" aria-hidden="true"></i></a>
+        <a href="https://furnalitynetwork.github.io/CRAN" class="nav-link text-xs font-bold uppercase tracking-wider transition-colors text-gray-600 hover:text-black">CRAN</a>
       </div>
 
       <!-- Contact + menu mobile -->
@@ -56,123 +57,180 @@
       <div id="mobile-menu" class="mobile-menu hidden absolute top-full left-0 right-0 flex-col gap-4 p-6 bg-white border-b border-gray-200 shadow-lg lg:hidden">
         <a href="https://furnalitynetwork.github.io" class="nav-link">ACCUEIL</a>
         <a href="https://furnalitynetwork.github.io/Zapping" class="nav-link">ZAPPING</a>
+        <a href="https://furnalitynetwork.github.io/Radio" class="nav-link">RADIO</a>
+        <a href="https://furnalitynetwork.github.io/OfficeBroadCaster" class="nav-link">OFFICE BROADCASTER</a>
         <a href="https://furnalitynetwork.github.io/news" class="nav-link">NEWS</a>
-        <a href="https://furnalitynetwork.github.io/OfficeBroadCaster" class="nav-link inline-flex items-center gap-1" title="Site externe à Furnality">OFFICE BROADCASTER <i data-lucide="arrow-up-right" width="12" height="12" aria-hidden="true"></i></a>
-        <a href="https://furnalitynetwork.github.io/CRAN" class="nav-link inline-flex items-center gap-1" title="Site externe à Furnality">CRAN <i data-lucide="arrow-up-right" width="12" height="12" aria-hidden="true"></i></a>
+        <a href="https://furnalitynetwork.github.io/CRAN" class="nav-link">CRAN</a>
         <a href="mailto:furnality@gmail.com" class="primary-button text-center mt-2">Contact</a>
       </div>
     </nav>
   </header>
 
-  <main id="watch-main" class="pt-20 flex-grow">
+  <main class="pt-20">
 
-    <!-- En-tête -->
-    <section id="watch-hero" class="hero px-6 py-12 md:py-16 md:px-12 border-b border-gray-100">
+    <!-- Section : Accueil / Hero -->
+    <section id="accueil" class="hero px-6 py-16 md:py-20 md:px-12 border-b border-gray-100 scroll-mt-20">
       <div class="relative mx-auto w-full max-w-7xl z-10">
-        <a href="https://furnalitynetwork.github.io/Zapping" class="inline-flex items-center gap-2 mb-8 text-xs font-bold uppercase tracking-wider text-gray-500 hover:text-[#c8102e] transition-colors">
-          <i data-lucide="arrow-left" class="w-4 h-4"></i>
-          <span>Retour au catalogue</span>
-        </a>
-
-        <div class="max-w-3xl">
-          <div id="hero-pill" class="inline-flex items-center gap-2 px-2.5 py-1 bg-black text-white text-[10px] font-extrabold uppercase tracking-widest mb-4">
-            Zapping
+        <div class="max-w-3xl mb-6">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 bg-black text-white text-[10px] font-extrabold uppercase tracking-widest mb-4">
+            Plateforme de Streaming
           </div>
-          <h1 id="media-title" class="text-4xl md:text-6xl font-bold tracking-tight text-black leading-tight">
-            Chargement...
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-black leading-tight">
+            ZAPPING by Furnality.
           </h1>
-          <p id="media-description" class="mt-4 text-base md:text-lg text-gray-600 max-w-xl leading-relaxed"></p>
+          <p class="mt-4 text-base md:text-lg text-gray-600 max-w-xl leading-relaxed">
+            Vos histoires préférées, sans la moindre publicité grâce à votre soutien.
+          </p>
+        </div>
+
+        <!-- Injection Slider Cloudflare D1 + Contrôles manuels -->
+        <div id="featured-slider"></div>
+        <div id="featured-controls" class="hidden flex items-center justify-between gap-4 mt-3">
+          <div id="featured-dots" class="flex items-center gap-2"></div>
+          <div class="flex items-center gap-2">
+            <button id="slider-prev" type="button" class="h-9 w-9 inline-flex items-center justify-center border border-gray-200 bg-white hover:border-black transition-colors" aria-label="Programme précédent">
+              <i data-lucide="chevron-left" width="16" height="16"></i>
+            </button>
+            <button id="slider-next" type="button" class="h-9 w-9 inline-flex items-center justify-center border border-gray-200 bg-white hover:border-black transition-colors" aria-label="Programme suivant">
+              <i data-lucide="chevron-right" width="16" height="16"></i>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Lecteur + panneau de l'épisode en cours -->
-    <section id="player-section" class="px-6 py-12 md:px-12 border-b border-gray-200">
-      <div class="max-w-7xl mx-auto grid gap-8 lg:gap-10 lg:grid-cols-[minmax(0,1.7fr)_minmax(280px,0.8fr)] items-start">
-
-        <div class="w-full space-y-4">
-          <div id="player-wrapper" class="w-full">
-            <div class="aspect-video w-full bg-gray-50 border border-gray-200 animate-pulse flex flex-col items-center justify-center gap-3 text-gray-400">
-              <i data-lucide="loader-2" class="w-8 h-8 animate-spin"></i>
-              <span class="text-xs font-mono uppercase tracking-widest">Chargement du flux...</span>
-            </div>
-          </div>
-
-          <!-- Navigation Épisode précédent / suivant -->
-          <div id="episode-nav" class="hidden flex items-center justify-between gap-4 pt-2">
-            <a id="prev-episode-btn" href="#" class="secondary-button text-xs">
-              <i data-lucide="chevron-left" width="14" height="14"></i>
-              <span>Épisode précédent</span>
-            </a>
-            <a id="next-episode-btn" href="#" class="secondary-button text-xs">
-              <span>Épisode suivant</span>
-              <i data-lucide="chevron-right" width="14" height="14"></i>
-            </a>
+    <!-- Section : Chaînes TV & Radio (inchangée) -->
+    <section id="chaines" class="section-space py-16 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col justify-between gap-4 md:flex-row md:items-end border-b border-gray-200 pb-4">
+          <div>
+            <p class="eyebrow mb-1 text-xs font-mono text-gray-400 uppercase">TV & Radio</p>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-black">EN DIRECT.</h2>
           </div>
         </div>
 
-        <aside id="episode-panel" class="show-card bg-white" style="height:auto">
-          <div class="show-body">
-            <div class="flex items-center justify-between gap-2 mb-2">
-              <p class="eyebrow text-xs font-mono text-gray-400 uppercase">En cours de lecture</p>
-              <button id="copy-link-btn" type="button" class="text-[11px] font-bold uppercase tracking-wider text-gray-500 hover:text-black inline-flex items-center gap-1">
-                <i data-lucide="link" width="12" height="12"></i>
-                <span id="copy-link-label">Copier le lien</span>
-              </button>
-            </div>
-            <h2 id="episode-title" class="text-xl md:text-2xl font-bold text-black leading-snug">—</h2>
-
-            <div class="flex flex-wrap items-center gap-2 mt-4">
-              <span id="badge-season-episode" class="show-channel-badge hidden">—</span>
-              <span id="badge-production" class="show-category hidden">—</span>
-            </div>
-
-            <div class="mt-6 pt-5 border-t border-gray-200 flex items-center gap-3">
-              <img id="broadcaster-logo" src="" alt="Chaîne" class="h-8 w-auto object-contain hidden" onerror="this.style.display='none'">
-              <span id="badge-broadcaster" class="show-channel-badge hidden">—</span>
-            </div>
-
-            <!-- À suivre : prochains épisodes de la série -->
-            <div id="upnext" class="hidden mt-6 pt-5 border-t border-gray-200">
-              <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-4">À suivre</p>
-              <div id="upnext-list" class="flex flex-col gap-4"></div>
-            </div>
+        <!-- Sous-section Télévision -->
+        <div class="mt-8">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 flex items-center gap-2">
+            <i data-lucide="tv" class="w-4 h-4 text-black"></i>
+            <span>Télévision</span>
+          </h3>
+          <div id="tv-channels-grid" class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            <div class="h-28 bg-gray-50 border border-gray-200 animate-pulse rounded-none"></div>
+            <div class="h-28 bg-gray-50 border border-gray-200 animate-pulse rounded-none"></div>
+            <div class="h-28 bg-gray-50 border border-gray-200 animate-pulse rounded-none"></div>
+            <div class="h-28 bg-gray-50 border border-gray-200 animate-pulse rounded-none"></div>
+            <div class="h-28 bg-gray-50 border border-gray-200 animate-pulse rounded-none"></div>
           </div>
-        </aside>
+        </div>
 
+        <!-- Sous-section Radio -->
+        <div class="mt-12">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 flex items-center gap-2">
+            <i data-lucide="radio" class="w-4 h-4 text-black"></i>
+            <span>Station de Radio</span>
+          </h3>
+          <div id="radio-channels-grid" class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            <div class="h-28 bg-gray-50 border border-gray-200 animate-pulse rounded-none"></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Section Épisodes & Saisons (même série) -->
-    <section id="episodes-section" class="py-16 px-6 md:px-12 border-b border-gray-200 bg-gray-50/50">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 border-b border-gray-200 mb-8">
-          <div class="pb-4">
-            <p id="episodes-eyebrow" class="eyebrow mb-1 text-xs font-mono text-gray-400 uppercase">Guide des émissions</p>
-            <h2 id="episodes-title" class="text-2xl md:text-3xl font-extrabold text-black">Épisodes</h2>
+    <!-- Reprendre la lecture (historique local) -->
+    <section id="continue-watching" class="hidden py-10 border-t border-gray-200 bg-white scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex items-center justify-between gap-4 border-b border-gray-200 pb-4 mb-6">
+          <div>
+            <p class="eyebrow mb-1 text-xs font-mono text-gray-400 uppercase">Historique local</p>
+            <h2 class="text-xl md:text-2xl font-extrabold text-black">Reprendre la lecture.</h2>
           </div>
-          <div id="season-tabs" role="tablist" aria-label="Choisir une saison" class="flex gap-6 overflow-x-auto"></div>
+          <button id="clear-history-btn" type="button" class="text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-black transition-colors">
+            Effacer
+          </button>
         </div>
-
-        <div id="episodes-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+        <div id="continue-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
       </div>
     </section>
 
-    <!-- Section Autres programmes de la même chaîne (masquée si vide) -->
-    <section id="channel-shows-section" class="py-16 px-6 md:px-12">
-      <div class="max-w-7xl mx-auto">
-        <div class="border-b border-gray-200 pb-4 mb-8">
-          <p class="eyebrow mb-1 text-xs font-mono text-gray-400 uppercase">Sur la même chaîne</p>
-          <h2 id="channel-shows-title" class="text-2xl md:text-3xl font-extrabold text-black">Autres programmes</h2>
+    <!-- Section : Catalogue / Programmes -->
+    <section id="programmes" class="section-space py-16 border-t border-gray-200 bg-gray-50/50 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-gray-200 pb-6 mb-6">
+          <div>
+            <p class="eyebrow mb-1 text-xs font-mono text-gray-400 uppercase">Catalogue</p>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-black">Nos émissions.</h2>
+          </div>
+          <p id="shows-count" class="text-xs font-mono uppercase tracking-wider text-gray-500"></p>
         </div>
 
-        <div id="channel-shows-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+        <!-- Filtres & Recherche -->
+        <div class="grid gap-3 md:grid-cols-12 mb-8">
+          <div class="md:col-span-5 relative">
+            <input
+              id="shows-search"
+              type="search"
+              placeholder="Rechercher un programme ou un podcast..."
+              aria-label="Rechercher un programme"
+              class="w-full px-4 py-2.5 text-xs bg-white border border-gray-200 text-black focus:outline-none focus:border-black"
+            >
+          </div>
+          <div class="md:col-span-4">
+            <select id="shows-channel-filter" aria-label="Filtrer par chaîne" class="w-full px-3 py-2.5 text-xs font-bold uppercase tracking-wider bg-white border border-gray-200 text-black focus:outline-none focus:border-black">
+              <option value="ALL">Toutes les chaînes</option>
+            </select>
+          </div>
+          <div class="md:col-span-3 flex border border-gray-200 bg-white divide-x divide-gray-200" role="group" aria-label="Filtrer par format">
+            <button type="button" data-format="ALL" class="format-filter-btn flex-1 py-2.5 text-[11px] font-bold uppercase tracking-wider bg-black text-white">Tout</button>
+            <button type="button" data-format="VIDEO" class="format-filter-btn flex-1 py-2.5 text-[11px] font-bold uppercase tracking-wider text-gray-600 hover:text-black">Vidéo</button>
+            <button type="button" data-format="PODCAST" class="format-filter-btn flex-1 py-2.5 text-[11px] font-bold uppercase tracking-wider text-gray-600 hover:text-black">Audio</button>
+          </div>
+        </div>
+
+        <!-- Injection des émissions Cloudflare D1 -->
+        <div id="shows-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="h-64 bg-white border border-gray-200 p-6 flex flex-col justify-between animate-pulse">
+            <div class="space-y-3">
+              <div class="h-4 bg-gray-200 w-1/3"></div>
+              <div class="h-6 bg-gray-200 w-3/4"></div>
+              <div class="h-12 bg-gray-100 w-full"></div>
+            </div>
+            <div class="h-8 bg-gray-200 w-1/4 self-end"></div>
+          </div>
+          <div class="h-64 bg-white border border-gray-200 p-6 flex flex-col justify-between animate-pulse">
+            <div class="space-y-3">
+              <div class="h-4 bg-gray-200 w-1/3"></div>
+              <div class="h-6 bg-gray-200 w-3/4"></div>
+              <div class="h-12 bg-gray-100 w-full"></div>
+            </div>
+            <div class="h-8 bg-gray-200 w-1/4 self-end"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Contact / Office Broadcaster -->
+    <section id="contact" class="section-space py-16 px-6 md:px-12 border-t border-gray-200 scroll-mt-20">
+      <div class="section-inner max-w-7xl mx-auto">
+        <article class="feature-panel p-8 md:p-10 bg-gray-50 border border-gray-200 border-l-4 border-l-black flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div class="max-w-2xl">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/OBC%20-%20Office%20BroadCaster.svg" alt="Office Broadcaster" class="h-9 w-auto object-contain mb-4" onerror="this.style.display='none'">
+            <p class="eyebrow text-xs font-mono text-gray-400 uppercase mb-2">Office BroadCaster</p>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-black">Rejoindre le réseau de diffusion.</h2>
+            <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+              Projets de diffusion, partenariats de flux ou propositions de contenus : nous accompagnons les formats originaux et la création indépendante.
+            </p>
+          </div>
+          <a href="https://furnalitynetwork.github.io/OfficeBroadCaster/" class="primary-button flex-shrink-0 px-6 py-3 bg-black text-white font-bold text-xs uppercase tracking-widest hover:bg-[#000000] transition-colors">
+            Contacter la régie
+          </a>
+        </article>
       </div>
     </section>
 
   </main>
 
-  <!-- Pied de page officiel -->
+  <!-- Pied de page - Zapping -->
   <footer class="bg-white border-t border-gray-200 py-12 px-6">
     <div class="max-w-7xl mx-auto">
 
@@ -224,13 +282,14 @@
 
       <div class="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
         <p>&copy; 2018 - 2027 Furnality | Tous droits réservés.</p>
-        <span class="font-semibold text-gray-700">Furnality Studio</span>
+        <div class="flex items-center gap-2">
+          <span class="font-semibold text-gray-700">Furnality Studio</span>
+        </div>
       </div>
 
     </div>
   </footer>
 
-  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/watch.js?v=4"></script>
-  
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/zapping.js?v=13"></script>
 </body>
 </html>
