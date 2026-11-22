@@ -6,15 +6,22 @@
   <title>Furnality News — L'actualité du réseau</title>
   <meta name="description" content="L'actualité de Furnality News : à la une, rubriques et dossiers de la rédaction.">
 
+  <!-- Configuration PWA & iOS Web App -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ff1d25">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Furnality News">
+
   <!-- Tailwind CSS & Lucide Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
 
   <!-- Ressources centralisées depuis le dépôt Asset -->
-<link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20news.svg">
-<link rel="apple-touch-icon" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20news.png">
+  <link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20news.svg">
+  <link rel="apple-touch-icon" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/Fav%20-%20news.png">
   <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/global.css?v=20">
-  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/news.css?v=7">
+  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/news.css?v=8">
 
   <!-- Scripts centralisés -->
   <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/global.js?v=1"></script>
@@ -74,9 +81,12 @@
             <a class="n-band-title" href="index.html">Furnality News</a>
             <span class="n-date" id="news-date"></span>
           </div>
-          <form class="n-search" id="news-search-form" role="search">
-            <input type="search" id="news-search" placeholder="Rechercher un article…" aria-label="Rechercher un article">
-          </form>
+          <div class="n-band-actions">
+            <button type="button" id="n-push-btn" class="n-push-btn" hidden>Alertes</button>
+            <form class="n-search" id="news-search-form" role="search">
+              <input type="search" id="news-search" placeholder="Rechercher un article…" aria-label="Rechercher un article">
+            </form>
+          </div>
         </div>
       </div>
       <div class="n-band-cats" id="n-band-cats">
@@ -182,6 +192,6 @@
     </div>
   </footer>
 
-  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/news.js?v=7"></script>
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/news.js?v=8"></script>
 </body>
 </html>
